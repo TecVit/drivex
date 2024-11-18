@@ -1,0 +1,110 @@
+.container-navbar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: var(--slateEleven);
+    position: fixed;
+    top: 0px;
+    z-index: 990;
+}
+
+.container-navbar .content-navbar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid var(--slateEight);
+}
+
+.container-navbar .content-navbar .navbar {
+    width: 90%;
+    max-width: 1150px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-navbar .content-navbar .navbar .logo {
+    width: auto;
+    height: auto;
+    cursor: pointer;
+}
+
+.container-navbar .content-navbar .navbar .logo img {
+    width: auto;
+    height: 50px;
+}
+
+.container-navbar .content-navbar .navbar .search {
+    width: max-content;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex: 1;
+    margin: 0px 20px;
+}
+
+.container-navbar .content-navbar .navbar .search .icon {
+    position: absolute;
+    left: 15px;
+    font-size: 20px;
+    color: var(--one);
+}
+
+.container-navbar .content-navbar .navbar .search input {
+    width: 100%;
+    height: 44px;
+    border: 1px solid var(--one);
+    padding: 0px 20px 0px 45px;
+    font-size: 13.5px;
+    border-radius: 4px;
+    background: transparent;
+}
+
+
+/* BTNS */
+.container-navbar .content-navbar .navbar .btns {
+    width: max-content;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-one {
+    width: auto;
+    height: 44px;
+    padding: 0px 17px;
+    color: var(--one);
+    border: 1px solid var(--one);
+    font-size: 13.5px;
+    font-weight: 600;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+.btn-two {
+    width: auto;
+    height: 44px;
+    padding: 0px 16.5px;
+    color: var(--slateEleven);
+    border: 1px solid var(--one);
+    background: var(--one);
+    font-size: 13.5px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0px 10px;
+}

@@ -1,0 +1,254 @@
+.container-entrar-client {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 80px;
+}
+
+.container-entrar-client .content-entrar-client {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: calc(90dvh - 80px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    border-bottom: 2px solid var(--slateEight);
+}
+
+/* FORM */
+.container-entrar-client .content-entrar-client .form {
+    width: max-content;
+    min-width: 50%;
+    height: auto;
+    min-height: calc(100dvh - 40px);
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-entrar-client .content-entrar-client .form a {
+    width: 90%;
+    max-width: 450px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0px 0px 15px 0px;
+    color: var(--slateThree);
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+} .container-entrar-client .content-entrar-client .form a .icon {
+    font-size: 17px;
+    margin: 0px 6px 0px 0px;
+} .container-entrar-client .content-entrar-client .form a:hover {
+    color: var(--slateOne);
+    text-decoration: underline;
+}
+
+.container-entrar-client .content-entrar-client .form h1 {
+    width: 90%;
+    max-width: 450px;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0px 0px 15px 0px;
+}
+
+.container-entrar-client .content-entrar-client .form .input {
+    width: 90%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 10px 0px;
+    position: relative;
+}
+
+.container-entrar-client .content-entrar-client .form .input label {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0px 0px 4px 2px;
+}
+
+.container-entrar-client .content-entrar-client .form .input input {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    background: transparent;
+    padding: 0px 17.5px;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid var(--slateEight);
+}
+
+.container-entrar-client .content-entrar-client .form .input .eye {
+    position: absolute;
+    right: 17.5px;
+    bottom: 15px;
+    font-size: 20px;
+    color: var(--slateFive);
+    cursor: pointer;
+}
+
+.container-entrar-client .content-entrar-client .form span {
+    width: 90%;
+    max-width: 450px;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 7.5px 0px;
+    cursor: pointer;
+    color: var(--one);
+    transition: all .1s ease-in-out;
+} .container-entrar-client .content-entrar-client .form span:hover {
+    text-decoration: underline;
+}
+
+.container-entrar-client .content-entrar-client .form button {
+    width: 90%;
+    max-width: 450px;
+    height: 52.5px;
+    border-radius: 5px;
+    background: var(--one);
+    color: var(--slateEleven);
+    font-size: 15px;
+    font-weight: 600;
+    margin: 12.5px 0px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+} .container-entrar-client .content-entrar-client .form button:hover,
+.container-entrar-client .content-entrar-client .form button:focus {
+    background: var(--oneDark);
+}
+
+.container-entrar-client .content-entrar-client .form .or {
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 10px 0px;
+}
+
+.container-entrar-client .content-entrar-client .form .or div {
+    width: 100%;
+    height: 1px;
+    background: var(--slateThree);
+}
+
+.container-entrar-client .content-entrar-client .form .or p {
+    font-size: 15.25px;
+    font-weight: 500;
+    margin: 0px 15px;
+}
+
+.container-entrar-client .content-entrar-client .form .others {
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    margin: 20px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-entrar-client .content-entrar-client .form .others p {
+    width: max-content;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0px 0px 6px 0px;
+}
+
+.container-entrar-client .content-entrar-client .form .others a {
+    width: max-content;
+    font-size: 15.5px;
+    font-weight: 550;
+    text-align: center;
+    color: var(--one);
+    cursor: pointer;
+}
+
+/* INFO */
+.container-entrar-client .content-entrar-client .info {
+    width: 60%;
+    min-height: calc(100dvh - 40px);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(125deg, var(--oneDark), var(--one));
+    color: var(--slateEleven);
+}
+
+.container-entrar-client .content-entrar-client .info img {
+    width: 225px;
+    height: auto;
+    margin: 0px 0px 15px 0px;
+}
+
+.container-entrar-client .content-entrar-client .info h1 {
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    margin: 0px 0px 17.5px 0px;
+}
+
+.container-entrar-client .content-entrar-client .info button {
+    width: max-content;
+    height: auto;
+    padding: 15px 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--slateEleven);
+    background: transparent;
+    color: var(--slateEleven);
+    transition: all .1s ease-in-out;
+} .container-entrar-client .content-entrar-client .info button:hover,
+.container-entrar-client .content-entrar-client .info button:focus {
+    background: var(--slateEleven);
+    color: var(--oneDark);
+}
+
+
+/* TERMS */
+.container-entrar-client .terms {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px
+}
+
+.container-entrar-client .terms a {
+    font-size: 15.25px;
+    font-weight: 500;
+    margin: 0px 12.5px;
+    color: var(--two);
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+} .container-entrar-client .terms a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 940px) {
+    .container-entrar-client .content-entrar-client .info {
+        display: none;
+    }
+    .container-entrar-client .content-entrar-client .form {
+        min-width: 100%;
+    }
+}

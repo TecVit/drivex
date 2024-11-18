@@ -1,0 +1,99 @@
+.container-footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--slateEleven);
+    border-top: 2px solid var(--slateEight);
+}
+
+.container-footer .content-footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-footer .content-footer .links {
+    width: 90%;
+    max-width: 1150px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-end;
+    padding: 45px 0px;
+}
+
+.container-footer .content-footer .links .text {
+    max-width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto 0px 0px;   
+}
+
+.container-footer .content-footer .links .text img {
+    width: 250px;
+    height: auto;
+    margin: 0px 0px 8px -10px;
+}
+
+.container-footer .content-footer .links .text h1 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+    color: var(--slateFour);
+    margin: 0px 0px 8px 0px;
+}
+
+.container-footer .content-footer .links li {
+    width: max-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0px 50px;
+}
+
+.container-footer .content-footer .links li a {
+    font-size: 16px;
+    font-weight: 550;
+    margin: 0px 0px 12.5px 0px;
+    cursor: pointer;
+    color: var(--slateFour);
+    transition: all .1s ease-in-out;
+} .container-footer .content-footer .links li a:hover {
+    text-decoration: underline;
+}
+
+
+.container-footer .content-footer .credits {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+    background: var(--one);
+    /*background: var(--slateSix);*/
+    color: var(--slateEleven);
+}
+
+.container-footer .content-footer .credits .content {
+    width: 90%;
+    max-width: 1150px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-footer .content-footer .credits .content p {
+    font-size: 15px;
+    font-weight: 600;
+}

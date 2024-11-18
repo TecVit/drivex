@@ -1,0 +1,84 @@
+.container-404 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-404 {
+    width: 92.5%;
+    height: auto;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+.content-404 h1 {
+    font-size: 110px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    line-height: auto;
+    color: var(--slateFour);
+    border-bottom: 10px dotted var(--slateFour);
+    margin: 0px 0px 16.5px 0px;
+}
+
+.content-404 h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--slateThree);
+    margin: 0px 0px 10px 0px;
+    text-align: center;
+}
+
+.content-404 p {
+    max-width: 750px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: var(--slateThree);
+    margin: 0px 0px 15px 0px;
+    text-align: center;
+}
+
+.content-404 .icon {
+    width: max-content;
+    height: auto;
+    font-size: 50px;
+    color: var(--slateThree);
+    margin: 0px 0px 15px 0px;
+}
+
+.content-404 button {
+    width: max-content;
+    height: auto;
+    color: var(--one);
+    border: 1px solid var(--one);
+    border-radius: 4px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 0px 0px 20px 0px;
+    background: transparent;
+    transition: all .1s ease-in-out;
+} .content-404 button:hover,
+.content-404 button:focus {
+    background: var(--one);
+    color: var(--slateEleven);
+}
+
+.content-404 a {
+    max-width: 750px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--slateThree);
+    margin: 0px 0px 12.5px 0px;
+    text-align: center;
+}

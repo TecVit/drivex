@@ -1,0 +1,261 @@
+.container-products {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 80px;
+}
+
+.container-products .content-products {
+    width: 90%;
+    max-width: 1150px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 50px 0px;
+}
+
+.container-products .content-products .router {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 30px 0px;
+}
+
+.container-products .content-products .router p {
+    font-size: 16px;
+    font-weight: 500;
+} .container-products .content-products .router p strong {
+    font-weight: 600;
+    color: var(--slateOne);
+}
+
+.container-products .content-products h1 {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-align: center;
+    line-height: unset;
+    margin: 30px 0px 6px 0px;
+} .container-products .content-products h1 strong {
+    color: var(--one);
+    font-weight: 700;
+}
+
+.container-products .content-products p {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: unset;
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+}
+
+.container-products .content-products .categories {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22.5px;
+    margin: 20px 0px 40px 0px;
+}
+
+.container-products .content-products .categories .category {
+    width: 200px;
+    height: auto;
+    padding: 28px 8px;
+    background: var(--slateEleven);
+    border: 1px solid var(--slateEight);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+} .container-products .content-products .categories .category:hover,
+.container-products .content-products .categories .category:focus {
+    background: var(--slateNine);
+}
+
+.container-products .content-products .categories .category .icon {
+    padding: 16px;
+    font-size: 30px;
+    border-radius: 50%;
+    background: var(--two);
+    color: var(--slateEleven);
+    margin: 0px 0px 8px 0px;
+}
+
+.container-products .content-products .categories .category p {
+    font-size: 17px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+}
+
+
+/* Search */
+.container-products .content-products .search {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0px;
+}
+
+.container-products .content-products .search p {
+    width: 100%;
+    max-width: 1090px;
+    height: auto;
+    margin: 16.5px 0px 0px 0px;
+    text-align: start;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.container-products .content-products .search p strong {
+    font-size: 17.5px;
+    font-weight: 600;
+}
+    
+
+.container-products .content-products .search .input {
+    width: 100%;
+    max-width: 1090px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.container-products .content-products .search .input input {
+    width: 100%;
+    height: 52px;
+    border: 2px solid var(--slateEight);
+    border-radius: 6px;
+    padding: 0px 15px 0px 47.5px;
+    font-size: 14.5px;
+    font-weight: 600;
+}
+
+.container-products .content-products .search .input .icon {
+    position: absolute;
+    left: 17.5px;
+    font-size: 22.5px;
+    color: var(--slateSeven);
+}
+
+.container-products .content-products .search .stores {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22.5px;
+    margin: 30px 0px;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Arrows */
+.container-products .content-products .search .stores .arrow {
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 50%;
+    background: var(--slateEleven);
+    border: 1px solid var(--slateEight);
+    cursor: pointer;
+    z-index: 100;
+    transition: all .1s ease-in-out;
+} .container-products .content-products .search .stores .arrow:hover {
+    background: var(--slateNine);
+}
+
+.container-products .content-products .search .stores .arrow.right {
+    position: absolute;
+    right: 8.5px;
+    top: 50%;
+    transform: translateY(-50%);
+} .container-products .content-products .search .stores .arrow.left {
+    position: absolute;
+    left: 8.5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.container-products .content-products .search .stores .store {
+    width: 200px;
+    height: auto;
+    padding: 28px 8px;
+    background: var(--slateEleven);
+    border: 1px solid var(--slateEight);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+} .container-products .content-products .search .stores .store:hover,
+.container-products .content-products .search .stores .store:focus {
+    background: var(--slateNine);
+}
+
+.container-products .content-products .search .stores .store .image {
+    width: 52.5px;
+    height: 52.5px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: var(--white);
+    border: 1px solid var(--slateEight);
+}
+
+.container-products .content-products .search .stores .store h1 {
+    font-size: 15px;
+    font-weight: 550;
+    margin: 6px 0px 0px 0px;
+}
+
+.container-products .content-products .search .stores .store .stars {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0px 0px 0px;
+}
+
+.container-products .content-products .search .stores .store .stars .star {
+    font-size: 22px;
+    color: var(--gold);
+    margin: 0px;
+}
+
+.container-products .content-products .search .stores .store .stars p {
+    width: auto;
+    height: auto;
+    display: flex;
+    margin: 0px 0px 0px 6px;
+    font-size: 16px;
+    font-weight: 500;
+} .container-products .content-products .search .stores .store .stars p strong {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px 2px 0px 0px;
+}

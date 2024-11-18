@@ -1,0 +1,143 @@
+.container-entrar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 80px;
+}
+
+.container-entrar .content-entrar {
+    width: 90%;
+    max-width: 1150px;
+    height: auto;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0px;
+}
+
+.container-entrar .content-entrar h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--slateFour);
+    margin: 0px 0px 5px 0px;
+}
+
+.container-entrar .content-entrar p {
+    font-size: 16.5px;
+    font-weight: 500;
+    color: var(--slateThree);
+    margin: 0px 0px 20px 0px;
+}
+
+.container-entrar .content-entrar .profiles {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 25px 0px;
+}
+
+.container-entrar .content-entrar .profiles .profile {
+    width: max-content;
+    max-width: 400px;
+    height: auto;
+    padding: 50px 30px;
+    border-radius: 12px;
+    border: 2px solid var(--slateEight);
+    background: var(--slateEleven);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all .1s ease-in-out;
+} .container-entrar .content-entrar .profiles .profile:hover {
+    border: 2px solid var(--two);
+    background: rgba(var(--three-rgb), 0.1);
+} .container-entrar .content-entrar .profiles .profile.store:hover {
+    border: 2px solid var(--store);
+    background: rgba(var(--store-rgb), 0.1);
+}
+
+.container-entrar .content-entrar .profiles .profile .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.container-entrar .content-entrar .profiles .profile.client .circle {
+    background: rgba(var(--two-rgb), 0.2);
+    color: var(--two);
+    border: 1px solid var(--two);
+} .container-entrar .content-entrar .profiles .profile.store .circle {
+    background: rgba(var(--store-rgb), 0.2);
+    color: var(--store);
+    border: 1px solid var(--store);
+}
+
+.container-entrar .content-entrar .profiles .profile h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--slateTwo);
+    margin: 15px 0px 10px 0px;
+    text-align: center;
+}
+
+.container-entrar .content-entrar .profiles .profile.client h1 {
+    color: var(--two);
+} .container-entrar .content-entrar .profiles .profile.store h1 {
+    color: var(--store);
+}
+
+.container-entrar .content-entrar .profiles .profile p {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--slateFive);
+    margin: 0px 0px 15px 0px;
+    text-align: center;
+}
+
+.container-entrar .content-entrar .profiles .profile button {
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 700;
+    background: var(--two);
+    color: var(--slateEleven);
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.container-entrar .content-entrar .profiles .profile.store button {
+    background: var(--store);
+}
+
+
+.container-entrar .content-entrar a {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--slateThree);
+    margin: 30px 0px 0px 0px;
+} .container-entrar .content-entrar a strong {
+    font-weight: 700;
+    color: var(--two);
+    transition: all .1s ease-in;
+    cursor: pointer;
+    font-size: 16.5px;
+    margin: 0px 0px 0px 2px;
+} .container-entrar .content-entrar a strong:hover {
+    text-decoration: underline;
+}
