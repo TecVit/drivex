@@ -77,10 +77,12 @@ export default function Stores() {
                     {inputSearch.length > 0 && (
                         <p>Principais resultados para: <strong>"{inputSearch}"</strong></p>
                     )}
-                    {carregando && (
-                        <div className='loader'></div>
-                    )}
                     <div className='stores'>
+                        {carregando && (
+                            [0, 1, 2, 3, 4].map((val, i) => (
+                                <div className='store loading' key={i}></div>
+                            ))
+                        )}
                         {stores.length && !carregando ? (
                             stores
                                 .filter(store => store.nome.toLowerCase().includes(inputSearch.toLowerCase())) // Primeiro filtra as lojas

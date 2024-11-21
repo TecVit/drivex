@@ -225,26 +225,31 @@ export default function Home() {
                         <Link to='/concessionarias'>Ver todas</Link>
                     </div>
                     <div className='stores'>
+                        {carregando && (
+                            [0, 1, 2, 3, 4].map((store, i) => (
+                                <div className='store loading' key={i}></div>
+                            ))
+                        )}
                         {stores.length && !carregando ? (
                             stores.map((store, i) => (
-                                    <div onClick={() => window.location.href = `/concessionaria/${gerarCode(store.nome)}`} className='store' key={i}>
-                                        {store.foto ? (
-                                            <div className='image' style={{ backgroundImage: `url(${store.foto})` }}></div>
-                                        ) : (
-                                            <IonIcon icon={personCircle} className='icon' />
-                                        )}
-                                        <h1>{store.nome}</h1>
-                                        <div className="stars">
-                                        <IonIcon icon={star} className='star' />
-                                        <p><strong>{store.stars || 5}</strong> / 5</p>
-                                        </div>
+                                <div onClick={() => window.location.href = `/concessionaria/${gerarCode(store.nome)}`} className='store' key={i}>
+                                    {store.foto ? (
+                                        <div className='image' style={{ backgroundImage: `url(${store.foto})` }}></div>
+                                    ) : (
+                                        <IonIcon icon={personCircle} className='icon' />
+                                    )}
+                                    <h1>{store.nome}</h1>
+                                    <div className="stars">
+                                    <IonIcon icon={star} className='star' />
+                                    <p><strong>{store.stars || 5}</strong> / 5</p>
                                     </div>
-                                ))
+                                </div>
+                            ))
                         ) : !carregando && (
                             <p>Nenhuma concessionária encontrada.</p>
                         )}
                     </div>
-                    {stores.length > 2 && (
+                    {stores.length > 1 && (
                         <>
                             <IonIcon onClick={prevStore} icon={arrowBack} className='arrow left desktop-500' />
                             <IonIcon onClick={nextStore} icon={arrowForward} className='arrow right desktop-500' />
@@ -283,7 +288,7 @@ export default function Home() {
                             <p>Nenhuma loja encontrada.</p>
                         )}
                     </div> 
-                    {cars.length > 2 && (
+                    {cars.length > 1 && (
                         <>
                             <IonIcon onClick={prevStore} icon={arrowBack} className='arrow left desktop-500' />
                             <IonIcon onClick={nextStore} icon={arrowForward} className='arrow right desktop-500' />
