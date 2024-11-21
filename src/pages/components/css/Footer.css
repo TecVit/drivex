@@ -28,7 +28,7 @@
 }
 
 .container-footer .content-footer .links .text {
-    max-width: 400px;
+    max-width: 350px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@
 }
 
 .container-footer .content-footer .links .text img {
-    width: 250px;
+    width: 125px;
     height: auto;
     margin: 0px 0px 8px -10px;
 }

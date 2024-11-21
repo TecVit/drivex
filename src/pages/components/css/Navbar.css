@@ -34,6 +34,7 @@
     width: auto;
     height: auto;
     cursor: pointer;
+    margin: 0px 10px 0px 0px;
 }
 
 .container-navbar .content-navbar .navbar .logo img {
@@ -70,6 +71,10 @@
     background: transparent;
 }
 
+.container-navbar .content-navbar .navbar .search input::placeholder {
+    color: var(--slateFive);
+    opacity: 0.9;
+}
 
 /* BTNS */
 .container-navbar .content-navbar .navbar .btns {

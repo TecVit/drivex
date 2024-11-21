@@ -1,0 +1,1238 @@
+{
+    "html_attributions" : [],
+    "next_page_token" : "AdDdOWoMD0EmXi18NfAgvNLhbHJL5btOcMaI_RqWmjUhcPOtq8kgHYEGjB9FWDCA1cTWln3gXhulcd7dK-mGWk-50iWEJ4CWHzUbOH4RdooAG6Lnjv83zwjRvWaQiJK8UPs1dEg24EG91kLUpSO5jgvWRDEdCZ0_ZCiy4WKLMIa8b1RYS_9Oal1LgiN9YBWHya62hJJGbICWTG2FtjWus84OMttrEBjYFR5YJ5VuzOxmvt6sV7FUySqnyPh0lkzh8i6EG6XO8uqswalfnihY2yjFRngyrFeWIVowK3uMXf78rT0vGBvjVYrg3Wx_vqfZE3um74DFf4YY_EUwHYfuxMTLISHBTFoM-gXF5oFNLgwwkXVPlhdmun0yGx2FgVH34Ixm5x-9o8umRL0zwuMX-IJ4KdWZoiAXl5L5WgeGMpevJRk-J7BAn6bFwNZ3nomQEcWziv4TfQ",
+    "results" : 
+    [
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7681426,
+                "lng" : -48.16599
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.76685407010728,
+                   "lng" : -48.16464707010728
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.76955372989272,
+                   "lng" : -48.16734672989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "MAPRI VEÍCULOS",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 1800,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/104806358524991602736\"\u003eA Google User\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWrrKfprJEkNift-ZY1jBr3fg0Kd5iY8xQDXs_wBHwiiR0oaV6Wkih4lGrWW4lrtE2X46AoD3UziSbAHvLdjoUWimpO_hfwx1_olfr4TvY8_ZPlM4qfOoMOpigEKC6wd-L2e5XomKeChKQRp-nOL5FsAvNOCjbKy76Q6-WTATBixlhs4",
+                "width" : 1440
+             }
+          ],
+          "place_id" : "ChIJPQBCaKzxuJQRj_HbtV5Qcbc",
+          "plus_code" : 
+          {
+             "compound_code" : "6RJM+PJ Vila Velosa, Araraquara - SP",
+             "global_code" : "58CH6RJM+PJ"
+          },
+          "rating" : 5,
+          "reference" : "ChIJPQBCaKzxuJQRj_HbtV5Qcbc",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 21,
+          "vicinity" : "Av. Luís Alberto, 596 - Vila Velosa, Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7743543,
+                "lng" : -48.1599266
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.77301007010728,
+                   "lng" : -48.15860972010728
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.77570972989272,
+                   "lng" : -48.16130937989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "ESPIRRO VEICULOS - ARARAQUARA",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 584,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/107509346699274705703\"\u003eA Google User\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWpp5NFnPxzunmrPXp2FVfBSmNSrKs-DgL7pEN89AoTdFihgZhN1TTpjSk4XJ0ztRN7_BJWamWvZsWIuioBVlHkYCD1mPZ3KJrvd6sD-OGqwDj7GPYw1vtapudzg7W9TlsEF8WCRAjaX7fwJ7eprgypEJtqWlRv1x44fBY-ZrOHep0fj",
+                "width" : 1024
+             }
+          ],
+          "place_id" : "ChIJDcFis6z2uJQR9a7mjFFFeD0",
+          "plus_code" : 
+          {
+             "compound_code" : "6RGR+72 Vila Cidade Industrial (Vila Xavier), Araraquara - SP",
+             "global_code" : "58CH6RGR+72"
+          },
+          "rating" : 4.5,
+          "reference" : "ChIJDcFis6z2uJQR9a7mjFFFeD0",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 13,
+          "vicinity" : "Alameda Paulista, 2021 - Vila Cidade Industrial (Vila Xavier), Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7466567,
+                "lng" : -48.1495509
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.74536922010728,
+                   "lng" : -48.14820427010728
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.74806887989272,
+                   "lng" : -48.15090392989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "Caballero Multimarcas",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 720,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/112098179072694763714\"\u003eCaballero Multimarcas\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWqFTThPFPsSS10nHsxcPVclxu-IcnUo4c2AflqmOtJLh6fgwwBU3wck8Snyn7HsqYM3qgLD5OpKiYYRYUYrQ3XeYCzCVU_wKCVt6tyOejpsHwW9ikVTn3LowgpSgMVzi1orSWGz6_3MKoLpeojdCUF4oPnbp_BFPLIUGVcf04b9gzxT",
+                "width" : 1280
+             }
+          ],
+          "place_id" : "ChIJjdNyx-_2uJQROQCha3OyNys",
+          "plus_code" : 
+          {
+             "compound_code" : "7V32+85 Araraquara, São Paulo",
+             "global_code" : "58CH7V32+85"
+          },
+          "rating" : 4.7,
+          "reference" : "ChIJjdNyx-_2uJQROQCha3OyNys",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 81,
+          "vicinity" : "R. Lázaro Mendes Ferreira, 17 - JD Piemonte, Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7791036,
+                "lng" : -48.1772156
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.77778192010728,
+                   "lng" : -48.17597662010728
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.78048157989272,
+                   "lng" : -48.17867627989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "Arruda Veículos",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 3024,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/105553808762991744919\"\u003eRafael\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWpGVkWCoo4MiCyutJkCJwAR3PAVhN4xN-NL5TkTm9XcTjtaVHCeTzpApDNM04_aqZIW4qbh_IJvIbnFkZwyP_23kT0P_LVMfDSKTZBGlv9BNR7JHWjbdzqm2mixmu99eR9F7wskGInbks5w4ly7lGMjwAZSbehK4Sf20NWyHsEI2U1L",
+                "width" : 4032
+             }
+          ],
+          "place_id" : "ChIJA36qTFzxuJQRuhI44ga1imo",
+          "plus_code" : 
+          {
+             "compound_code" : "6RCF+93 Jardim Primavera, Araraquara - SP",
+             "global_code" : "58CH6RCF+93"
+          },
+          "rating" : 4.8,
+          "reference" : "ChIJA36qTFzxuJQRuhI44ga1imo",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 119,
+          "vicinity" : "R. Gonçalves Dias, 1906 - Jardim Primavera, Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7846331,
+                "lng" : -48.16185919999999
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.78326242010727,
+                   "lng" : -48.16051487010728
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.78596207989272,
+                   "lng" : -48.16321452989273
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "Braguini Veículos",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 1080,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/118227942658304225928\"\u003eA Google User\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWpjT1SF52Hflv3h6Vt9hOEotY8E-0UGUApCh0iz7-rntpsbpG4InxCE6SQlzxsWSpXcntTxVsT0LqzQCqssA3F8FsAZv1mKPHLsc7uXlFMmfAwvzU_DbL5Ex8TMJIB3SKqXBfo08-N2F_Zlrp2P5lrwxTARH1GwfUR8yP_kgzXo0qXS",
+                "width" : 1920
+             }
+          ],
+          "place_id" : "ChIJ_16g01LxuJQReKNT30vszsY",
+          "plus_code" : 
+          {
+             "compound_code" : "6R8Q+47 Vila Santa Maria (Vila Xavier), Araraquara - SP",
+             "global_code" : "58CH6R8Q+47"
+          },
+          "rating" : 4.6,
+          "reference" : "ChIJ_16g01LxuJQReKNT30vszsY",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 84,
+          "vicinity" : "Av. Padre Antônio Cezarino, 946 - Vila Santa Maria (Vila Xavier), Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7681027,
+                "lng" : -48.1663284
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.76682587010728,
+                   "lng" : -48.16498682010727
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.76952552989272,
+                   "lng" : -48.16768647989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "Mil Milhas Automóveis",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 960,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/116712999477767024898\"\u003eM Zendron &amp; Cia\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWp3iswOGm29pGIQ7lUg3D6GRq8-27j9cRBkKgRMs2AXxTE3BX8ulBweaGFapEqJlD-aGT2BLnuZcM9YIRTMax-07MwmYBBCDLJeDwFw08fr2qeozltASQGoe2EM8AWhkQCiVukpeKyoBnUQe5vWutIRm9GjZtzdgicnR6enGZ1Q0I5Z",
+                "width" : 1280
+             }
+          ],
+          "place_id" : "ChIJdYmlx07xuJQR2wsMyHKFv5M",
+          "plus_code" : 
+          {
+             "compound_code" : "6RJM+QF Vila Velosa, Araraquara - SP",
+             "global_code" : "58CH6RJM+QF"
+          },
+          "rating" : 4.7,
+          "reference" : "ChIJdYmlx07xuJQR2wsMyHKFv5M",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 37,
+          "vicinity" : "Av. Luís Alberto, 630 - Vila Velosa, Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7857339,
+                "lng" : -48.1725479
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.78439117010728,
+                   "lng" : -48.17109597010728
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.78709082989272,
+                   "lng" : -48.17379562989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "Via Veículos",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 3096,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/115646631391445971982\"\u003eA Google User\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWrobdYsi_SzIuP3G7x8MQveCd6Z37DvPnw2MgW06Tr9a_r4FMy2phgvRmj7Nfs76pCZ9JnhO3c6XWeV84hX2rPf-DJgQl5eM1UBuUdIQ_6KtTQch3Nt4TcXXV4I1EWC6wa0MFqfxp1LTzHZKr204b-_rBn3EC7DQcsHNz2vLh65Kyyl",
+                "width" : 4128
+             }
+          ],
+          "place_id" : "ChIJH-NvV-LzuJQRzFkNkD4aRGU",
+          "plus_code" : 
+          {
+             "compound_code" : "6R7G+PX Vila Ferroviaria, Araraquara - SP",
+             "global_code" : "58CH6R7G+PX"
+          },
+          "rating" : 5,
+          "reference" : "ChIJH-NvV-LzuJQRzFkNkD4aRGU",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 27,
+          "vicinity" : "Av. Maria Antonia Camargo de Oliveira, 2261 - Vila Ferroviaria, Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7876831,
+                "lng" : -48.1724301
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.78633197010728,
+                   "lng" : -48.17102987010728
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.78903162989272,
+                   "lng" : -48.17372952989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "Fel Veiculos",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 720,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/111093868125551492869\"\u003eA Google User\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWqRt_9adkFm-0wq9T6qUeinVETwV0QPTTWu9IDTicm8z2NNh351izkGqDnmgthSeaKug6KoLMNHrNYurBgLP7AGsJfu1NfSaPkT-lHMTytGzeAJN-48kONF5pFJ92mP3CFmd3DDfj1eJV-OoHA8XLDmP5UCxrSrLN4IBVrGvRtonkwc",
+                "width" : 1280
+             }
+          ],
+          "place_id" : "ChIJQ1_HjbjzuJQRRYl2kPkgUR8",
+          "plus_code" : 
+          {
+             "compound_code" : "6R6H+W2 Centro, Araraquara - SP",
+             "global_code" : "58CH6R6H+W2"
+          },
+          "rating" : 4.5,
+          "reference" : "ChIJQ1_HjbjzuJQRRYl2kPkgUR8",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 36,
+          "vicinity" : "Av. Maria Antonia Camargo de Oliveira, 2035 - Centro, Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7686418,
+                "lng" : -48.1508693
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.76720172010728,
+                   "lng" : -48.14955367010728
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.76990137989272,
+                   "lng" : -48.15225332989273
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "FiP Motors",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 2736,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/114972061911434828186\"\u003eA Google User\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWqB97YUNwlan_GjTh0bKN_3ENMv6DVvKnEv4FkD7eGwHN372-0EeQ9cia947My1D1ZFh5F7b0fj0WC2-zp-ZLfzEqMVbAtD1abtftuBIJHKUm79d8XWf_rRqjqRnfuqrCr4tsSwnmo0STtzo2B5PPfqzaa5hfDUtPZbMKpyrWelOzQp",
+                "width" : 5472
+             }
+          ],
+          "place_id" : "ChIJiTD-n6T3uJQRMNoBT1prjGs",
+          "plus_code" : 
+          {
+             "compound_code" : "6RJX+GM Vila Gaspar (Vila Xavier), Araraquara - SP",
+             "global_code" : "58CH6RJX+GM"
+          },
+          "rating" : 4.9,
+          "reference" : "ChIJiTD-n6T3uJQRMNoBT1prjGs",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 18,
+          "vicinity" : "Av. Estr. de Ferro Araraquara, 1436 - Vila Gaspar (Vila Xavier), Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7450453,
+                "lng" : -48.1583266
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.74366382010728,
+                   "lng" : -48.15700007010727
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.74636347989272,
+                   "lng" : -48.15969972989271
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "Auto Shopping Veículos",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 960,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/103546261177722027921\"\u003eA Google User\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWp6D9NFNK2n0G3FLUjAjePD7h191eKgKOrZHEHqfUf7ZiyE-O0mjvieqk_9lNDudJmFCHmlXASXepw5d8wKnRVoAY0OipoDT5Hz7aWn3OFO6UZVu4MDIhjPBvoMgsV_6IFFv8WbbO9S-bMnGvzN5a-NpQQ_7ST4kCeisDxxMQ7ukBBy",
+                "width" : 1280
+             }
+          ],
+          "place_id" : "ChIJYxzJotT2uJQRxfy8VgqKvaE",
+          "plus_code" : 
+          {
+             "compound_code" : "7R3R+XM Jardim Imperador, Araraquara - SP",
+             "global_code" : "58CH7R3R+XM"
+          },
+          "rating" : 4.9,
+          "reference" : "ChIJYxzJotT2uJQRxfy8VgqKvaE",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 15,
+          "vicinity" : "R. Maurício Galli, 3386 - Jardim Imperador, Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7426738,
+                "lng" : -48.1188011
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.74121257010728,
+                   "lng" : -48.11749357010728
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.74391222989272,
+                   "lng" : -48.12019322989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "Trajano Comércio de Veículos",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 2992,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/107082588950247072099\"\u003eJonas Gonzaga\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWpdfmZXVz6SsViGtqVmr1VEdQj0b73HynOXo3TiG3PSAE8TUoEHAYMQ7W4LzrkE1eNuy2Pau4LGqxcXJZXsONMWS1yNq9cHmDSMcZscO1oNZ5arXZUi1B6ECb9VP2tif1Wp9KJ2nJE1JvI5xfNxWPMaorK1PvI2Ge9wwng9u-OE_bF6",
+                "width" : 4000
+             }
+          ],
+          "place_id" : "ChIJZyNQxlj2uJQRrw6YkULRP-8",
+          "plus_code" : 
+          {
+             "compound_code" : "7V4J+WF III Distrito Industrial, Araraquara - SP",
+             "global_code" : "58CH7V4J+WF"
+          },
+          "rating" : 4.5,
+          "reference" : "ChIJZyNQxlj2uJQRrw6YkULRP-8",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 23,
+          "vicinity" : "R. Boa Esperança do Sul, 197 - III Distrito Industrial, Américo Brasiliense"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7681909,
+                "lng" : -48.165584
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.76684487010728,
+                   "lng" : -48.16420442010727
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.76954452989272,
+                   "lng" : -48.16690407989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "Zinho Veículos Ltda",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 795,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/115873497818279575426\"\u003eA Google User\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWqpIBA8aph4InNqkeARcTvqI1-OIKrVqy8D2UKH6QAk9W3Pz8Pq6hWqUkHnqjDIUogZa05IBOQrsU5PRd8kPg7-XWanorIzpeZC8d-gzSodfHZJMRNBTDH0K_5-pRo1I6umEbe1V7CRfdHE1VXfnvVo5MFwKyxipRtHQHgI4jLQ8Dty",
+                "width" : 1080
+             }
+          ],
+          "place_id" : "ChIJ09c5vE7xuJQRmEMxJHIxmWg",
+          "plus_code" : 
+          {
+             "compound_code" : "6RJM+PQ Vila Velosa, Araraquara - SP",
+             "global_code" : "58CH6RJM+PQ"
+          },
+          "rating" : 4.1,
+          "reference" : "ChIJ09c5vE7xuJQRmEMxJHIxmWg",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 30,
+          "vicinity" : "R. Dr. Emilio Ribas, 157 - Vila Velosa, Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7433291,
+                "lng" : -48.1465785
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.74198422010728,
+                   "lng" : -48.14531197010728
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.74468387989272,
+                   "lng" : -48.14801162989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "JEFERSON AUTOMÓVEIS ARARAQUARA",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 2322,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/103778142418527918351\"\u003eA Google User\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWoSnaIn93ULsrf0isFfnMMF-Bi3Q7h0XvgJc3dFA0tB2LegYHpMc-BKc12KBGLt7zD0gH060DZuD0ytqmqPhbMw6htOI3IY9Bd8yBiAiOtrdmkypYJneYVmDUGmF7KSMefgTKFs3A2gWjnwiD52SFhRu_nrIlWbtta47Dkp_XcDA7ls",
+                "width" : 4128
+             }
+          ],
+          "place_id" : "ChIJT5evLpTzuJQRE5fGRxJvRzQ",
+          "plus_code" : 
+          {
+             "compound_code" : "7V43+M9 Araraquara, São Paulo",
+             "global_code" : "58CH7V43+M9"
+          },
+          "rating" : 5,
+          "reference" : "ChIJT5evLpTzuJQRE5fGRxJvRzQ",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 2,
+          "vicinity" : "Rua Dinamerico Duarte de Oliveira, 233 - Jardim Dos OITIS, Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7823661,
+                "lng" : -48.1560975
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.78096367010728,
+                   "lng" : -48.15475302010728
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.78366332989272,
+                   "lng" : -48.15745267989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "Dede Veículos",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "place_id" : "ChIJvenWFAH0uJQRRokvuMxx-5g",
+          "plus_code" : 
+          {
+             "compound_code" : "6R9V+2H Jardim Brasil (Vila Xavier), Araraquara - SP",
+             "global_code" : "58CH6R9V+2H"
+          },
+          "rating" : 4.7,
+          "reference" : "ChIJvenWFAH0uJQRRokvuMxx-5g",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 11,
+          "vicinity" : "Av. Paraná, 20 - Jardim Brasil (Vila Xavier), Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7774802,
+                "lng" : -48.1483044
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.77619157010728,
+                   "lng" : -48.14695232010727
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.77889122989273,
+                   "lng" : -48.14965197989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "Juninho Automóveis",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 960,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/116973421379159196531\"\u003eRicardo Guidi\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWrMK_dKvWLvv3cNob-RDa9b0u2H-uE0nhO0t8Z91hNIOoRHUHenFzsZTsomyzjC4XxS5UtbmEkCsFw9MaLtfA-SdJr77vXgJctMs5IreXvUVAyTXBUW_rfikeCEwUSHXjAINNGY4_r1e3wNXyGK_cx6PAtmRDR1keuMwDilOdqx6jkd",
+                "width" : 1280
+             }
+          ],
+          "place_id" : "ChIJKQM09OTzuJQRLKuFU59GB7s",
+          "plus_code" : 
+          {
+             "compound_code" : "6VF2+2M Jardim Cristo Rei (Vila Xavier), Araraquara - SP",
+             "global_code" : "58CH6VF2+2M"
+          },
+          "rating" : 4.4,
+          "reference" : "ChIJKQM09OTzuJQRLKuFU59GB7s",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 19,
+          "vicinity" : "Av. Plinio de Carvalho, 1881 - Jardim Cristo Rei (Vila Xavier), Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7357218,
+                "lng" : -48.1113448
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.73433752010728,
+                   "lng" : -48.11009342010727
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.73703717989272,
+                   "lng" : -48.11279307989271
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "RICARDINHO AUTOMÓVEIS",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 2992,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/107082588950247072099\"\u003eJonas Gonzaga\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWqSIqtONOLVz79lhINrvWOZX0e5Ldk4XBu1_y5RnuLrooK71tdRDLjTmeMweq3QzX--moRXQomeHMxCNY0xpwk4ywuFEjVGZ1b-ijVnUm2eeEvzCR2_yIjRoYxw2J1qj7a9M2QyDLabHi7i1hnXoU7-k13zLfKeOBQAf0RFYSTgJagc",
+                "width" : 4000
+             }
+          ],
+          "place_id" : "ChIJLRyGS5z3uJQRjtmUWwjICTc",
+          "plus_code" : 
+          {
+             "compound_code" : "7V7Q+PF Américo Brasiliense, São Paulo",
+             "global_code" : "58CH7V7Q+PF"
+          },
+          "rating" : 4.9,
+          "reference" : "ChIJLRyGS5z3uJQRjtmUWwjICTc",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "storage",
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 12,
+          "vicinity" : "R. Maria Mendes, 329 - Vila Cerqueira, Américo Brasiliense"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7867761,
+                "lng" : -48.172552
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.78542082010728,
+                   "lng" : -48.17111922010727
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.78812047989272,
+                   "lng" : -48.17381887989271
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "Localiza Seminovos",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 481,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/111101405151198976575\"\u003eA Google User\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWpA2QYTyhmAx4LMAuQU7wRBVYzBOLNRGLQFQhDo7iysnd6I7_eIz2Yg_fV717gHHg964l-IOvFBIC7XG6_Ju-EKKBZSVjsBGBGvssrc_eDUSCKhlcU_7t_XoT25ewOVu0EyHfVGB873lqBCr0xORKn1MDzd45uf6ElZ3rRhdxMT5Own",
+                "width" : 720
+             }
+          ],
+          "place_id" : "ChIJVcAYqePzuJQRZ-UHMVlNiQc",
+          "plus_code" : 
+          {
+             "compound_code" : "6R7G+7X Centro, Araraquara - SP",
+             "global_code" : "58CH6R7G+7X"
+          },
+          "rating" : 4.5,
+          "reference" : "ChIJVcAYqePzuJQRZ-UHMVlNiQc",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 198,
+          "vicinity" : "Av. Maria Antonia Camargo de Oliveira, 2137 - Centro, Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7671137,
+                "lng" : -48.1637154
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.76567212010728,
+                   "lng" : -48.16235712010727
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.76837177989272,
+                   "lng" : -48.16505677989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+          "icon_background_color" : "#7B9EB0",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+          "name" : "Limar Automóveis",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 1080,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/100201446080314428643\"\u003eA Google User\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWrT2xjxQTDFQ-duCylmbG56-cK2CjVbUF2NfQMfxMQE7almbpPprMbL7NLaGBs4KI5aTscQOdNG8Ai6GfQ4B4F7hMSPPiH4WDUQ51BI5qnYxthFuYKFzW19q76gSvY8vsvtoRO-NW9L9lxbTfgpZzTIdvg0QO9b9C-qbfgKcpwASIAK",
+                "width" : 1080
+             }
+          ],
+          "place_id" : "ChIJNckm6YnxuJQR-cfZqWL4Aqc",
+          "plus_code" : 
+          {
+             "compound_code" : "6RMP+5G Vila Sedenho, Araraquara - SP",
+             "global_code" : "58CH6RMP+5G"
+          },
+          "rating" : 5,
+          "reference" : "ChIJNckm6YnxuJQR-cfZqWL4Aqc",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "storage",
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 41,
+          "vicinity" : "Av. Pedro Galeazi, 155 - Vila Sedenho, Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7682633,
+                "lng" : -48.16802759999999
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.76686972010728,
+                   "lng" : -48.16667287010728
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.76956937989272,
+                   "lng" : -48.16937252989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "JAPA VEICULOS",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 1042,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/111987441226998402250\"\u003eA Google User\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWq94GlPwCv_aH18YM0sw6aBKhf74-rcCs1NVvoBsF-zR5M5X-3r_8WjT2-RquEmIQdjac9Vb4RRjlE9YRVWXrtIytN3cCQuTiqJkyhxDP8N1aQt4ieLLJyWFZbNLoV5d9ZU-pMK4izL-jcAQ8DHueVf8Ezhi7BbmUfepprvnCVhnMyR",
+                "width" : 1280
+             }
+          ],
+          "place_id" : "ChIJIbysM0_xuJQRJieazmS_y-8",
+          "plus_code" : 
+          {
+             "compound_code" : "6RJJ+MQ Vila Velosa, Araraquara - SP",
+             "global_code" : "58CH6RJJ+MQ"
+          },
+          "rating" : 4.2,
+          "reference" : "ChIJIbysM0_xuJQRJieazmS_y-8",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 5,
+          "vicinity" : "Av. Luís Alberto, 803 - Vila Velosa, Araraquara"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : 
+          {
+             "location" : 
+             {
+                "lat" : -21.7844411,
+                "lng" : -48.1723886
+             },
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : -21.78310572010728,
+                   "lng" : -48.17097002010728
+                },
+                "southwest" : 
+                {
+                   "lat" : -21.78580537989272,
+                   "lng" : -48.17366967989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+          "icon_background_color" : "#4B96F3",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+          "name" : "Porto Rodrigues Automóveis",
+          "opening_hours" : 
+          {
+             "open_now" : true
+          },
+          "photos" : 
+          [
+             {
+                "height" : 3024,
+                "html_attributions" : 
+                [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/102763401219148074752\"\u003eFernando Antonio\u003c/a\u003e"
+                ],
+                "photo_reference" : "AdDdOWrEix_6wJiTbcG6oVIfEw2Cm_51INJS5_iPJ3rKfoziZWPkt68N1NyaDcg_9Zt7pTVurNqaC75U_Qi_N6qI_tCkY2RcjlZ-G9TB6wTSLw4VE6s7ClxoDyQ9u225lDZm2WprHAjDnsQCQwqkQjYw4evygOpJnQ8tJ2D-p_t25W0nLwPZ",
+                "width" : 4032
+             }
+          ],
+          "place_id" : "ChIJJ3kYfeLzuJQRScpd4VTEHDc",
+          "plus_code" : 
+          {
+             "compound_code" : "6R8H+62 Centro, Araraquara - SP",
+             "global_code" : "58CH6R8H+62"
+          },
+          "rating" : 4.8,
+          "reference" : "ChIJJ3kYfeLzuJQRScpd4VTEHDc",
+          "scope" : "GOOGLE",
+          "types" : 
+          [
+             "car_dealer",
+             "store",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 71,
+          "vicinity" : "Av. Maria Antonia Camargo de Oliveira, 2423 - Centro, Araraquara"
+       }
+    ],
+    "status" : "OK"
+ }

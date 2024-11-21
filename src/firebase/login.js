@@ -250,6 +250,11 @@ export const entrarComEmail = async (email, senha, type) => {
             });
 
             setCookie('uid', uid);
+            
+            if (!dados.informacoesCompleta) {
+                return 'cadastro-incompleto';
+            }
+
             return 'sucesso';
         } else {
             return 'usuario-nao-existe'; 

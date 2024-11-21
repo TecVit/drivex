@@ -1,0 +1,352 @@
+.container-store {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 80px;
+    background: var(--slateTwo);
+}
+
+/* Banner */
+.container-store .banner {
+    width: 100%;
+    max-width: 1500px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 0px 0px 12px 12px;
+    overflow: hidden;
+}
+
+.container-store .banner .images {
+    width: 100%;
+    height: auto;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 0px;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;  
+}
+
+/* Arrows */
+.container-store .banner .arrow {
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 50%;
+    background: var(--slateEleven);
+    border: 1px solid var(--slateEight);
+    cursor: pointer;
+    z-index: 100;
+    transition: all .1s ease-in-out;
+} .container-store .banner .arrow:hover {
+    background: var(--slateNine);
+}
+
+.container-store .banner .arrow.right {
+    position: absolute;
+    right: 8.5px;
+    top: 50%;
+    transform: translateY(-50%);
+} .container-store .banner .arrow.left {
+    position: absolute;
+    left: 8.5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.container-store .banner .images .image {
+    width: max-content;
+    flex: 1;
+    min-height: 400px;
+    transition: all .1s ease-in-out;
+} .container-stores .content-stores .search .stores .store:hover,
+.container-stores .content-stores .search .stores .store:focus {
+    background: var(--slateNine);
+}
+
+
+/* Content */
+.container-store .content-store {
+    width: 92.5%;
+    max-width: 1200px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 0px 45px 0px;
+    background: var(--slateEleven);
+    border-radius: 16px;
+    z-index: 200;
+    margin: 0px 0px 40px 0px;
+} .container-store .content-store:first-of-type{
+    padding: 0px 0px 40px 0px;
+    margin: 160px 0px 40px 0px;
+} .container-store .content-store.banner-exists {
+    padding: 0px 0px 40px 0px;
+    margin: -50px 0px 40px 0px;
+} .container-store .content-store:last-of-type {
+    margin: 0px 0px 100px 0px !important;
+}
+
+.container-store .content-store .profile {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: -75px 0px 0px 0px;
+}
+
+.container-store .content-store .profile .person {
+    width: max-content;
+    max-width: 250px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-store .content-store .profile .person .logo {
+    width: 150px;
+    height: 150px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    padding: 0px;
+    background-color: var(--white);
+    border: 1px solid var(--slateEight);
+} .container-store .content-store .profile .person .icon.logo {
+    width: 135px;
+    height: 135px;
+    color: var(--one);
+    padding: 5px;
+}
+
+.container-store .content-store .profile .person h1 {
+    font-size: 22px;
+    font-weight: 650;
+    text-transform: uppercase;
+    margin: 12px 0px 0px 0px;
+    text-align: center;
+}
+
+
+.container-store .content-store .text {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container-store .content-store .text h1 {
+    font-size: 22px;
+    font-weight: 650;
+    text-transform: uppercase;
+    margin: 6px 0px 0px 0px;
+    text-align: center;
+}
+
+
+/* Info */
+.container-store .content-store .info {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0px 15px 0px;
+}
+
+.container-store .content-store .info .list {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22.5px;
+}
+
+.container-store .content-store .info .list li {
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-store .content-store .info .list li label {
+    font-size: 16px;
+    font-weight: 525;
+    margin: 0px 0px 2px 0px;
+}
+
+.container-store .content-store .info .list li p {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px 0px 2px 0px;
+}
+
+/* Cars */
+.container-store .content-store .cars {
+    width: 90%;
+    height: auto;
+    max-width: 1090px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22.5px;
+    margin: 0px;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+}
+
+.container-store .content-store .cars p {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 6px 0px 0px 0px;
+}
+
+.container-store .content-store .cars .car {
+    flex: 1;
+    min-width: 230px;
+    max-width: 350px;
+    height: max-content;
+    background: var(--slateEleven);
+    border: 1px solid var(--slateEight);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0px;
+    margin: 30px 0px 15px 0px;
+    transition: all .1s ease-in-out;
+}
+
+.container-store .content-store .cars .car .image {
+    width: 100%;
+    height: max-content;
+    min-height: max-content;
+    margin: -10px 0px 0px 0px;
+    padding: 0px;
+}
+
+.container-store .content-store .cars .car h1 {
+    width: 87.5%;
+    font-size: 15px;
+    font-weight: 550;
+    text-transform: uppercase;
+    margin: 14px 0px 0px 0px;
+}
+
+.container-store .content-store .cars .car p {
+    width: 87.5%;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 6px 0px 0px 0px;
+}
+
+.container-store .content-store .cars .car h2 {
+    width: 87.5%;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 16px 0px 0px 0px;
+} .container-store .content-store .cars .car h2 strong {
+    font-weight: 600 !important;
+}
+
+.container-store .content-store .cars .car .between {
+    width: 87.5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2px 0px 0px 0px;
+}
+
+.container-store .content-store .cars .car .between a {
+    width: max-content;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.container-store .content-store .cars .car button {
+    width: 87.5%;
+    height: 43.5px;
+    border-radius: 8px;
+    color: var(--slateEleven);
+    background: var(--one);
+    border: 1px solid var(--one);
+    margin: 12.5px 0px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+} .container-store .content-store .cars .car button:hover,
+.container-store .content-store .cars .car button:focus {
+    background: var(--slateEleven);
+    border: 1px solid var(--one);
+    color: var(--one);
+}
+
+.container-store .content-store .cars .car .location {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid var(--slateThree);
+    margin: 5px 0px 0px 0px;
+}
+
+.container-store .content-store .cars .car .location p {
+    width: 87.5%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 15px 0px;
+} .container-store .content-store .cars .car .location p .icon {
+    font-size: 17px;
+    margin: 0px 4px 0px 0px;
+} .container-store .content-store .cars .car .location p .like {
+    font-size: 17px;
+    margin: 0px 0px 0px auto;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+} .container-store .content-store .cars .car .location p .like:hover {
+    color: var(--one);
+}
+
+
+
+/* Map */
+.container-store .content-store .map {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0px 15px 0px;
+    border-radius: 12px;
+    overflow: hidden;
+}

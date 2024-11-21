@@ -30,20 +30,20 @@ export default function Footer() {
                 <div className='links'>
                     <div className='text'>
                         <img src={Logo} />
-                        <h1>Fazemos sua loja crescer com um gerenciador de vendas online</h1>
-                        <p>Mercado Digital, 2024.</p>
+                        <h1>Impulsione sua loja com um sistema inovador de anúncios de vendas online!</h1>
+                        <p>DriveX, 2024.</p>
                     </div>
                     <li>
-                        <a href="/produtos">Produtos</a>
-                        <a href="/empresas">Empresas</a>
-                        <a href="/categorias">Categorias</a>
-                        <a href="/melhores-precos">Melhores Preços</a>
+                        <a href="/carros">Todos os carros</a>
+                        <a href="/concessionarias">Concessionárias</a>
+                        <a href="/ofertas">Melhores ofertas</a>
+                        <a href="/melhores-precos">Melhores preços</a>
                     </li>
                     <li>
                         <a href="/entrar">Entrar</a>
                         <a href="/cadastrar">Cadastrar</a>
                         <a href="/sobre-nos">Sobre nós</a>
-                        <a href="/carrinho">Carrinho</a>
+                        <a href="/favoritos">Favoritos</a>
                     </li>
                     <li>
                         <a href='/termos-de-uso'>Termos de Uso</a>
@@ -53,7 +53,7 @@ export default function Footer() {
                 </div>
                 <div className='credits'>
                     <div className='content'>
-                        <p>&copy; 2024 Mercado Digital LTDA. Todos Direitos Reservados.</p>
+                        <p>&copy; 2024 DriveX LTDA. Todos Direitos Reservados.</p>
                     </div>
                 </div>
             </section>

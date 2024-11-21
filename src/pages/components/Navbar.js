@@ -30,16 +30,16 @@ export default function Navbar() {
         <header className='container-navbar'>
             <section className='content-navbar'>
                 <div className='navbar'>
-                    <div onClick={() => window.location.href = "/"} className='logo'>
+                    <div onClick={() => navigate('/')} className='logo'>
                         <img src={Logo} />
                     </div>
                     <div className='search'>
-                        <input placeholder='O que você deseja comprar?' type="text" />
+                        <input placeholder='Qual carro você deseja buscar?' type="text" />
                         <IonIcon icon={search} className="icon" />
                     </div>
                     <div className='btns'>
-                        <button onClick={() => window.location.href = "/entrar"} className='btn-one'>Entrar</button>
-                        <button onClick={() => window.location.href = "/cadastrar"} className='btn-two'>Cadastrar</button>
+                        <button onClick={() => navigate('/entrar')} className='btn-one'>Entrar</button>
+                        <button onClick={() => navigate('/cadastrar')} className='btn-two'>Cadastrar</button>
                     </div>
                 </div>
             </section>

@@ -1,44 +1,181 @@
-import React from 'react';
-import './Entrar.css';
-import { useLocation } from 'react-router-dom';
-import { NotificationContainer } from '../../toastifyServer';
+import React, { useState } from 'react';
+import './css/Entrar.css';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { NotificationContainer, notifyError, notifyInfo, notifySuccess } from '../../toastifyServer';
 import Navbar from '../components/Navbar';
+import Icon from '../../image/icon.png';
 
 // Icons
 import { IonIcon } from '@ionic/react';
-import { person, storefront } from 'ionicons/icons';
-import Footer from '../components/Footer';
+import { person, arrowBack, storefront, eye, eyeOff } from 'ionicons/icons';
+import { FcGoogle } from 'react-icons/fc';
+import { entrarComEmail, entrarComGoogle } from '../../firebase/login';
+import { getCookie } from '../../firebase/cookies';
 
-export default function Entrar() {
+export default function EntrarStore() {
+
+    const navigate = useNavigate();
     const location = useLocation();
     const path = location.pathname;
 
+    // Modais
+    const [carregando, setCarregando] = useState(false);
+
+    // Inputs
+    const [inputEmail, setInputEmail] = useState('');
+    const [inputPassword, setInputPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handleEntrar = async () => {
+        if (carregando) {
+            notifyInfo('Aguarde a ultima requisição terminar');
+            return;
+        }
+        setCarregando(true);
+        try {
+            if (!inputEmail || !inputPassword) {
+                notifyError('Por favor, preencha todos os campos obrigatórios.');
+                return false;
+            }
+            if (inputPassword && inputPassword.length < 6) {
+                notifyInfo('A senha deve conter no mínimo 6 caracteres.');
+                return false;
+            }
+            const response = await entrarComEmail(inputEmail, inputPassword, 'store');
+            if (response === 'sucesso') {
+                notifySuccess(`Bem-Vindo novamente, ${getCookie('nome')}!`);
+                setTimeout(() => {
+                    navigate("/perfil");
+                }, 3750);
+                return true;
+            } else if (response === 'credenciais-invalidas') {
+                notifyError('Email ou Senha inválidos!');
+            } else if (response === 'email-invalido') {
+                notifyError('Email inválido!');
+            } else if (response === 'usuario-nao-existe') {
+                notifyError('Empresa não existe!');
+            } else if (response === 'cadastro-incompleto') {
+                notifyInfo('Complete seu cadastro');
+                setTimeout(() => {
+                    navigate("/cadastrar");
+                }, 3750);
+            } else {
+                notifyError('Houve algum erro!');
+            }
+
+            return false;
+        } catch (error) {
+            console.error(error);
+            return false;
+        } finally {
+            setCarregando(false);
+        }
+    };
+
+    const handleEntrarGoogle = async () => {
+        if (carregando) {
+            notifyInfo('Aguarde a ultima requisição terminar');
+            return;
+        }
+        setCarregando(true);
+        try {
+            const response = await entrarComGoogle('store');
+            if (response === 'sucesso') {
+                notifySuccess(`Bem-Vindo novamente, ${getCookie('nome')}!`);
+                setTimeout(() => {
+                    navigate("/perfil");
+                }, 3750);
+                return true;
+            } else if (response === 'credenciais-invalidas') {
+                notifyError('Email ou Senha inválidos!');
+            } else if (response === 'email-invalido') {
+                notifyError('Email inválido!');
+            } else if (response === 'usuario-nao-existe') {
+                notifyError('Empresa não existe!');
+            } else if (response === 'cadastro-incompleto') {
+                notifyInfo('Complete seu cadastro');
+                setTimeout(() => {
+                    navigate("/cadastrar");
+                }, 3750);
+            } else {
+                notifyError('Houve algum erro!');
+            }
+
+            return false;
+        } catch (error) {
+            console.error(error);
+            return false;
+        } finally {
+            setCarregando(false);
+        }
+    };
+ 
     return (
-        <main className='container-entrar'>
+        <main className='container-entrar-store'>
             <Navbar />
-            <section className='content-entrar'>
-                <h1>Escolha a maneira de realizar o Login</h1>
-                <div className='profiles'>
-                    <div className='profile client'>
-                        <div className='circle'>
-                            <IonIcon icon={person} className='icon' />
-                        </div>
-                        <h1>Cliente</h1>
-                        <p>Quero comprar os melhores e mais baratos produtos de uma empresa</p>
-                        <button onClick={() => window.location.href = "/entrar/cliente"}>Acessar área do cliente</button>
+            <section className='content-entrar-store'>
+                <div className='form'>
+                    <Link to="/">
+                        <IonIcon icon={arrowBack} className='icon' />
+                        Voltar para o início
+                    </Link>
+                    <h1>Entre na sua conta do DriveX</h1>
+                    <div className='input'>
+                        <label>E-mail</label>
+                        <input onChange={(e) => setInputEmail(e.target.value)} placeholder='Digite o seu e-mail' type='text' />
                     </div>
-                    <div className='profile store'>
-                        <div className='circle'>
-                            <IonIcon icon={storefront} className='icon' />
-                        </div>
-                        <h1>Empresa</h1>
-                        <p>Quero vender meus produtos e divulgar minha empresa</p>
-                        <button onClick={() => window.location.href = "/entrar/empresa"}>Acessar área da empresa</button>
+                    <div className='input'>
+                        <label>Senha</label>
+                        <input value={inputPassword} onChange={(e) => setInputPassword(e.target.value)} placeholder='Digite a sua senha' type={showPassword ? 'text' : 'password'} />
+                        {showPassword ? (
+                            <IonIcon onClick={() => setShowPassword(false)} icon={eye} className='eye' />
+                        ) : (
+                            <IonIcon onClick={() => setShowPassword(true)} icon={eyeOff} className='eye' />
+                        )}    
                     </div>
+
+                    <span onClick={() => navigate("/esqueci-minha-senha")}>Esqueci minha senha</span>
+                    <button onClick={handleEntrar}>
+                        {carregando ? (
+                            <div className='loader'></div>
+                        ) : (
+                            <>Entrar</>
+                        )}
+                    </button>
+
+                    <div className='or'>
+                        <div></div>
+                        <p>OU</p>
+                        <div></div>
+                    </div>
+
+                    <button onClick={handleEntrarGoogle} className='btn-google'>
+                        {carregando ? (
+                            <div className='loader'></div>
+                        ) : (
+                            <>
+                                <FcGoogle className='icon' />
+                                Entrar com Google
+                            </>
+                        )}
+                    </button>
                 </div>
-                <a>Não tem uma conta? <strong onClick={() => window.location.href = "/cadastrar"}>Cadastrar</strong></a>
+                <div className='info'>
+                    <img src={Icon} />
+                    <h1>Tem uma concessionária <br /> e não está no DriveX?</h1>
+                    <button onClick={() => navigate("/cadastrar")}>
+                        Cadastre-se
+                    </button>
+                </div>
             </section>
-            <Footer />
+            <footer className='terms'>
+                <Link to="/termos-de-uso">
+                    Termos de uso
+                </Link>
+                <Link to="/politica-de-privacidade">
+                    Política de privacidade
+                </Link>
+            </footer>
         </main>
     )
 }

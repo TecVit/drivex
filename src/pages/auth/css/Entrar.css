@@ -102,7 +102,7 @@
     font-weight: 600;
     margin: 7.5px 0px;
     cursor: pointer;
-    color: var(--store);
+    color: var(--one);
     transition: all .1s ease-in-out;
 } .container-entrar-store .content-entrar-store .form span:hover {
     text-decoration: underline;
@@ -113,7 +113,7 @@
     max-width: 450px;
     height: 52.5px;
     border-radius: 5px;
-    background: var(--store);
+    background: var(--one);
     color: var(--slateEleven);
     font-size: 15px;
     font-weight: 600;
@@ -122,7 +122,7 @@
     transition: all .1s ease-in-out;
 } .container-entrar-store .content-entrar-store .form button:hover,
 .container-entrar-store .content-entrar-store .form button:focus {
-    background: rgba(var(--store-rgb), 0.8);
+    background: rgba(var(--one-rgb), 0.8);
 }
 
 .container-entrar-store .content-entrar-store .form .or {
@@ -172,7 +172,7 @@
     font-size: 15.5px;
     font-weight: 550;
     text-align: center;
-    color: var(--store);
+    color: var(--one);
     cursor: pointer;
 }
 
@@ -186,7 +186,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(125deg, var(--store), rgba(var(--store-rgb), 0.9), rgba(var(--store-rgb), 0.8), rgba(var(--store-rgb), 0.7));
+    background: linear-gradient(125deg, var(--one), rgba(var(--one-rgb), 0.9), rgba(var(--one-rgb), 0.8), rgba(var(--one-rgb), 0.7));
     color: var(--slateEleven);
 }
 
@@ -200,7 +200,7 @@
     width: 90%;
     max-width: 400px;
     text-align: center;
-    margin: 0px 0px 17.5px 0px;
+    margin: 0px 0px 15px 0px;
 }
 
 .container-entrar-store .content-entrar-store .info button {

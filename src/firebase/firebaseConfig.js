@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyDHvP8SYIDTnAFXsOvxnE47mWEXB-f4XW0",
-    authDomain: "mercado-digital-saas.firebaseapp.com",
-    projectId: "mercado-digital-saas",
-    storageBucket: "mercado-digital-saas.firebasestorage.app",
-    messagingSenderId: "799333244506",
-    appId: "1:799333244506:web:e2bd280fe309bf7f550263"
-};
+    apiKey: "AIzaSyA7JpTS2H-r1UEKRbnxSFfTkKeKjUEn4_Y",
+    authDomain: "api-drive-x.firebaseapp.com",
+    projectId: "api-drive-x",
+    storageBucket: "api-drive-x.firebasestorage.app",
+    messagingSenderId: "800599744120",
+    appId: "1:800599744120:web:d4b3d7823bc71d16a6578d"
+};  
 
 export { firebaseConfig };

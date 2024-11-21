@@ -47,7 +47,7 @@
 }
 
 .Toastify__toast--info .Toastify__progress-bar {
-    background: var(--one) !important;
+    background: var(--blueDark) !important;
 }
 
 /* ICONES */
@@ -63,5 +63,5 @@
 
 .Toastify__toast--info .Toastify__toast-icon {
     width: 20px !important;
-    color: var(--one) !important;
+    color: var(--blueDark) !important;
 }

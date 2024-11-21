@@ -139,7 +139,7 @@
     font-weight: 600;
     margin: 7.5px 0px;
     cursor: pointer;
-    color: var(--store);
+    color: var(--one);
     transition: all .1s ease-in-out;
 } .container-cadastrar-store .content-cadastrar-store .form span:hover {
     text-decoration: underline;
@@ -150,7 +150,7 @@
     max-width: 450px;
     height: 52.5px;
     border-radius: 5px;
-    background: var(--store);
+    background: var(--one);
     color: var(--slateEleven);
     font-size: 15px;
     font-weight: 600;
@@ -159,7 +159,7 @@
     transition: all .1s ease-in-out;
 } .container-cadastrar-store .content-cadastrar-store .form button:hover,
 .container-cadastrar-store .content-cadastrar-store .form button:focus {
-    background: rgba(var(--store-rgb), 0.8);
+    background: rgba(var(--one-rgb), 0.8);
 }
 
 .container-cadastrar-store .content-cadastrar-store .form .or {
@@ -229,7 +229,7 @@
     font-size: 15.5px;
     font-weight: 550;
     text-align: center;
-    color: var(--store);
+    color: var(--one);
     cursor: pointer;
 }
 
