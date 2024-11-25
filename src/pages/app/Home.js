@@ -13,6 +13,10 @@ import Banner from '../../image/banner.png';
 import { getStores } from '../../firebase/stores';
 
 export default function Home() {
+    
+    const formatName = (name, maxLength = 20) => {
+        return name.length > maxLength ? `${name.slice(0, maxLength)}...` : name;
+    };
 
     function gerarCode(nome) {
         return nome
@@ -23,14 +27,12 @@ export default function Home() {
           .toLowerCase(); // Transforma tudo em minúsculas
     }
 
-    const results = require('../../results.json');
-
     const navigate = useNavigate();
     const location = useLocation();
     const path = location.pathname;
 
     // Modais
-    const [carregando, setCarregando] = useState(false);
+    const [carregando, setCarregando] = useState(true);
 
     const carsList = [
         {
@@ -101,92 +103,7 @@ export default function Home() {
     // Location
     const [locationUser, setLocationUser] = useState(null);
     const [error, setError] = useState(null);
-
-    useEffect(() => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    setLocationUser({
-                        latitude: position.coords.latitude,
-                        longitude: position.coords.longitude,
-                    });
-                },
-                (err) => {
-                    setError("Erro ao obter localização: " + err.message);
-                }
-            );
-        } else {
-            setError("Geolocalização não suportada pelo navegador");
-        }
-    }, []);
     
-    const fetchNearbyStores = async (latitude, longitude) => {
-        const apiKeyMaps = 'AIzaSyC8oScECyz1YvLfpeLt3bhNKCOxstRrGgE';
-        const radius = 5000;
-
-        try {
-            const response = await axios.get(
-                `https://maps.googleapis.com/maps/api/place/nearbysearch/json`, {
-                    params: {
-                        location: `${latitude},${longitude}`,
-                        radius: radius,
-                        keyword: 'carro',
-                        types: 'car_dealer',
-                        key: apiKeyMaps
-                    }
-                });
-
-            const data = response.data;
-
-            if (data.results) {
-                console.log(data.results);
-                return data.results;
-            } else {
-                console.error('Erro ao buscar lojas', data.error_message);
-                return [];
-            }
-        } catch (error) {
-            console.error('Erro na requisição:', error);
-            return [];
-        }
-    };
-    
-    useEffect(() => {
-        if (locationUser && locationUser.latitude && locationUser.longitude) {
-            fetchNearbyStores(locationUser.latitude, locationUser.longitude);
-        }
-    }, [ locationUser ]);
-    
-    // Array de objetos com o nome, latitude e longitude
-    const [locais, setLocais] = useState(results.results);
-
-    const getDistance = async (destination, origin) => {
-        const apiKey = 'AIzaSyAF_RGT7Ox1FSzlCK5gC43mDC-O-DJfMFM';
-        
-        try {
-            const response = await axios.get('https://maps.googleapis.com/maps/api/distancematrix/json', {
-                params: {
-                    origins: origin,
-                    destinations: destination,
-                    key: apiKey,
-                }
-            });
-
-            const data = response.data;
-            if (data.rows && data.rows[0].elements[0].status === 'OK') {
-                const distance = data.rows[0].elements[0].distance.value;
-                console.log(`A distância entre os dois endereços é: ${distance}`);
-                return distance;
-            } else {
-                console.error('Erro ao calcular a distância:', data.error_message);
-                return null;
-            }
-        } catch (error) {
-            console.error('Erro na requisição:', error);
-            return null;
-        }
-    };
-
     useEffect(() => {
         const getStoresList = async () => {
             setCarregando(true);
@@ -209,7 +126,6 @@ export default function Home() {
 
     return (
         <main className='container-home'>
-            <NotificationContainer />
             <Navbar />
             <div className='main'>
                 <div className='images'>
@@ -238,7 +154,7 @@ export default function Home() {
                                     ) : (
                                         <IonIcon icon={personCircle} className='icon' />
                                     )}
-                                    <h1>{store.nome}</h1>
+                                    <h1>{formatName(store.nome, 30)}</h1>
                                     <div className="stars">
                                     <IonIcon icon={star} className='star' />
                                     <p><strong>{store.stars || 5}</strong> / 5</p>
@@ -279,7 +195,6 @@ export default function Home() {
                                         <p>
                                             <IonIcon icon={locationOutline} className='icon' />
                                             {car.cidade}
-                                            <IonIcon icon={heart} className='like' />
                                         </p>
                                     </div>
                                 </div>

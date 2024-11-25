@@ -8,6 +8,9 @@ import Cadastrar from './pages/auth/Cadastrar';
 
 // Pages - App
 import Home from './pages/app/Home';
+import Profile from './pages/app/Profile';
+
+// Pages - App - Stores
 import Stores from './pages/app/stores/Stores';
 import Store from './pages/app/stores/Store';
 
@@ -17,7 +20,7 @@ import Error404 from './pages/error/404';
 import { clearCookies, deleteCookie, getCookie, setCookie } from './firebase/cookies';
 
 // Toastify
-import { notifySuccess, notifyError, NotificationContainer } from './toastifyServer';
+import { notifySuccess, notifyError, notifyInfo, NotificationContainer } from './toastifyServer';
 import 'react-toastify/dist/ReactToastify.css';
 import './css/customToastify.css';
 
@@ -25,12 +28,16 @@ const RouterApp = () => {
         
     return (
         <Router>
+            <NotificationContainer />
             <Routes>
                 <Route path="/" element={<Home />} />
 
                 {/* Entrar e Cadastrar */}
                 <Route path="/entrar" element={<Entrar />} />
                 <Route path="/cadastrar" element={<Cadastrar />} />
+
+                {/* Perfil */}
+                <Route path="/perfil" element={<Profile />} />
                 
                 {/* Carros */}
                 <Route path="/concessionarias" element={<Stores />} />
@@ -40,7 +47,6 @@ const RouterApp = () => {
 
                 <Route path="/*" element={<Error404 />} />
             </Routes>
-            <NotificationContainer />
         </Router>
     );
 

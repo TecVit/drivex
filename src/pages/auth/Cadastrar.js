@@ -349,7 +349,7 @@ export default function CadastrarStore() {
                 return;
             }
             
-            const dadosAtualizados = {
+            let dadosAtualizados = {
                 nome: inputNome,
                 telefone: inputTelefone,
                 cep: inputCEP,
@@ -362,7 +362,7 @@ export default function CadastrarStore() {
                 ddd: dataCEP?.ddd,
                 informacoesCompleta: true,
                 foto: fotoCookie,
-                // email: emailCookie,
+                isUpdated: false,
             };
 
             Object.keys(dadosAtualizados).forEach((key) => {
@@ -371,20 +371,33 @@ export default function CadastrarStore() {
                 }
             });
 
-            await firestore.collection('stores').doc(userId).update(dadosAtualizados);
+            const storeDoc = await firestore.collection('store').doc(gerarCode(inputNome)).get();
+
+            if (storeDoc.exists) {
+                notifyError('Já existe uma concessionária com esse nome');
+                return;
+            }
+
             await firestore.collection('store').doc(gerarCode(inputNome)).set(dadosAtualizados, { merge: true });
-    
+            delete dadosAtualizados['isUpdated'];
+            
+            await firestore.collection('stores').doc(userId).update(dadosAtualizados);
+            
             const success = await updateStoresAPI();
 
-            notifySuccess('Cadastro concluído com sucesso!');
-            setMdInformations(false);
-            setMdAccount(true);
+            if (success) {
+                notifySuccess('Cadastro concluído com sucesso!');
+                setMdInformations(false);
+                setMdAccount(true);
+    
+                setTimeout(() => {
+                    navigate("/perfil");
+                }, 3750);
+    
+                return true;
+            }
 
-            setTimeout(() => {
-                navigate("/perfil");
-            }, 3750);
-
-            return true;
+            return false;
         } catch (error) {
             notifyError('Erro ao salvar informações: ' + error.message);
         } finally {

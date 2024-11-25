@@ -18,9 +18,14 @@ import {
 } from 'ionicons/icons';
 
 export default function Stores() {
+
     const location = useLocation();
     const path = location.pathname;
 
+    const formatName = (name, maxLength = 20) => {
+        return name.length > maxLength ? `${name.slice(0, maxLength)}...` : name;
+    };
+    
     function gerarCode(nome) {
         return nome
           .normalize("NFD") // Normaliza a string para decompor os acentos
@@ -36,7 +41,7 @@ export default function Stores() {
         { code: 'autoracing', stars: 4.8, nome: 'Autoracing', foto: 'https://img.freepik.com/vetores-premium/projeto-de-showroom-de-carros-esportivos-concept-car-silhouette-auto-logotipo-da-concessionaria-de-veiculos-motorizados-de-desempenho_498574-192.jpg?w=360' },
     ];
 
-    const [carregando, setCarregando] = useState(false);
+    const [carregando, setCarregando] = useState(true);
     const [inputSearch, setInputSearch] = useState('');
     const [stores, setStores] = useState([]);
 
@@ -93,7 +98,7 @@ export default function Stores() {
                                         ) : (
                                             <IonIcon icon={personCircle} className='icon' />
                                         )}
-                                        <h1>{store.nome}</h1>
+                                        <h1>{formatName(store.nome, 30)}</h1>
                                         <div className="stars">
                                         <IonIcon icon={star} className='star' />
                                         <p><strong>{store.stars || 5}</strong> / 5</p>

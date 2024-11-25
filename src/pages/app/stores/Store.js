@@ -10,12 +10,9 @@ import { v4 as uuidv4 } from 'uuid';
 // Firebase
 import { getStore } from '../../../firebase/stores';
 
-import {
-    GoogleMap,
-    LoadScript,
-    Marker,
-    DirectionsRenderer,
-} from "@react-google-maps/api";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 
 // Icons
 import { IonIcon } from '@ionic/react';
@@ -25,10 +22,30 @@ import {
   star,
   personCircle,
   locationOutline,
-  heart
+  heart,
+  locationSharp,
+  logoInstagram,
+  logoFacebook,
+  logoWhatsapp
 } from 'ionicons/icons';
+import { ImWhatsapp } from 'react-icons/im';
+
+import CustomSelect from '../components/CostumSelect';
 
 export default function Stores() {
+    
+    function formatPhoneNumber(phone) {
+        return phone.replace(/\D/g, '');
+    }
+
+    // Opções do select
+    const fruitOptions = [
+        { value: "apple", label: "🍎 Apple" },
+        { value: "orange", label: "🍊 Orange" },
+        { value: "banana", label: "🍌 Banana" },
+        { value: "grape", label: "🍇 Grape" },
+        { value: "watermelon", label: "🍉 Watermelon" },
+    ];
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -38,62 +55,10 @@ export default function Stores() {
     const id = params.id;
     
     // Modais
-    const [carregando, setCarregando] = useState(false);
+    const [carregando, setCarregando] = useState(true);
 
     // Data
     const [storeData, setStoreData] = useState({});
-
-    const storeDataFake = { 
-        code: 'limar-automoveis', 
-        stars: 4.23,
-        nome: 'Limar Automóveis', 
-        cidade: 'Araraquara - SP',
-        bairro: 'Vila Sedenho',
-        numero: '155',
-        rua: 'Av. Pedro Galeazi',
-        cep: '14806015',
-        telefone: '(16) 99726-7084',
-        cnpj: '08.337.462/0001-00',
-        foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfaW9e8C6_eh5MtgDxYHLypzaq84EOfJanfw&s',
-        carros: [
-            {
-                uid: uuidv4(),
-                code: 'fiat-mobi-1.0-evo-flex-like-manual',
-                nome: 'Fiat Mobi',
-                modelo: '1.0 Evo Flex Like Manual',
-                foto: 'https://image.webmotors.com.br/_fotos/anunciousados/gigante/2024/202410/20241010/fiat-mobi-1.0-evo-flex-like.-manual-wmimagem05061238423.jpg?s=fill&w=552&h=400&q=85',
-                preco: 85000,
-                descricao: 'Se você está buscando um novo carro, não se arrisque e compre na Localiza Seminovos: carros com 360 itens verificados, garantia e procedência. Aqui você encontra a maior variedade de modelos do mercado, condições únicas de financiamento, entrada facilitada em até 10 vezes sem juros, carros revisados e com garantia de quilometragem real. Viabilizamos a troca do seu carro usado e entregamos seu novo carro na segurança de sua casa! Agende já seu atendimento.',
-                ano: 2020,
-                quilometragem: '35.000 km',
-                cidade: 'Ribeirão Preto, SP'
-            },
-            {
-                uid: uuidv4(),
-                code: 'honda-civic-2.0-16v-flexone-sport-cvt',
-                nome: 'Honda Civic',
-                modelo: '2.0 16V FlexOne Sport CVT',
-                foto: 'https://image.webmotors.com.br/_fotos/anuncionovos/gigante/2024/202408/20240823/honda-civic-2.0-di-e:hev-advanced-ecvt-wmimagem11065108388.jpg?s=fill&w=552&h=400&q=85',
-                preco: 125000,
-                descricao: 'Honda Civic com design moderno, desempenho excepcional e conforto. Revisões em dia e garantia de procedência. Ótimas condições de financiamento e trocas.',
-                ano: 2022,
-                quilometragem: '15.000 km',
-                cidade: 'Araraquara, SP'
-            },
-            {
-                uid: uuidv4(),
-                code: 'toyota-corolla-2.0-vvt-ie-flex-xei-direct-shift',
-                nome: 'Toyota Corolla',
-                modelo: '2.0 VVT-iE Flex XEi Direct Shift',
-                foto: 'https://image.webmotors.com.br/_fotos/anunciousados/gigante/2024/202411/20241118/toyota-corolla-2-0-vvtie-flex-xei-direct-shift-wmimagem13051269711.webp?s=fill&w=249&h=186&q=70',
-                preco: 135000,
-                descricao: 'Toyota Corolla com tecnologia de ponta, segurança e economia. Uma escolha confiável para quem busca qualidade e durabilidade.',
-                ano: 2021,
-                quilometragem: '20.000 km',
-                cidade: 'São Carlos, SP'
-            }
-        ]
-    };
 
     const [images, setImages] = useState([]);
     const nextStore = () => {
@@ -115,83 +80,10 @@ export default function Stores() {
           carouselRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         }
     };
+
     const [mdBanner, setMdBanner] = useState(true);
 
-
-    // =====> Maps of Store <=====
-    const [directions, setDirections] = useState(null);
-    const [empresaLatLng, setEmpresaLatLng] = useState(null);
-    const [cepCliente] = useState("14806-868"); 
-    const [googleLoaded, setGoogleLoaded] = useState(false);
-    const [routeLoaded, setRouteLoaded] = useState(false);
-    const apiKey = 'AIzaSyCmiMWmmQjEhkVu7dKONgRpQ2CUsULomgk';
-
-    const mapRef = useRef(null);
-
-    // Função para calcular a rota
-    const calcularRota = () => {
-        if (!storeData || Object.keys(storeData).length <= 0) return;
-        if (!cepCliente || !empresaLatLng) return;
-        
-        const directionsService = new window.google.maps.DirectionsService();
-        directionsService.route(
-            {
-                origin: cepCliente,
-                destination: empresaLatLng,
-                travelMode: window.google.maps.TravelMode.DRIVING,
-            },
-            (result, status) => {
-                if (status === window.google.maps.DirectionsStatus.OK) {
-                    setDirections(result);
-                    setRouteLoaded(true);
-                } else {
-                    alert("Não foi possível calcular a rota. Verifique o CEP.");
-                }
-            }
-        );
-    };
-
-    useEffect(() => {
-        if (!storeData || Object.keys(storeData).length <= 0) return;
-        if (!storeData?.cep) return;
-        if (empresaLatLng) return;
-        
-        const fetchCoordinates = async () => {
-            try {
-                
-                const enderecoCompleto = `${storeData.rua}, ${storeData?.numero}, ${storeData.bairro}, ${storeData.cidade}, ${storeData.cep}`;
-                
-                const response = await fetch(
-                    `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(enderecoCompleto)}&key=${apiKey}`
-                );
-
-                const data = await response.json();
-
-                if (data.status === "OK" && data.results.length > 0) {
-                    const { lat, lng } = data.results[0].geometry.location;
-                    
-                    setEmpresaLatLng({ lat, lng });
-                } else {
-                    console.error("Erro ao buscar coordenadas:", data.status);
-                }
-            } catch (error) {
-                console.error("Erro ao buscar coordenadas:", error);
-            }
-        };
-
-        fetchCoordinates();
-    }, [storeData?.cep, apiKey]);
-
-    const handleScriptLoad = () => {
-        setGoogleLoaded(true);
-    };
-
-    useEffect(() => {
-        if (!routeLoaded && empresaLatLng) {
-            calcularRota();
-        }
-    }, [routeLoaded, empresaLatLng]);
-
+    // const apiKey = 'AIzaSyCmiMWmmQjEhkVu7dKONgRpQ2CUsULomgk';
 
     useEffect(() => {
         const getStoreData = async () => {
@@ -218,6 +110,18 @@ export default function Stores() {
         }
         getStoreData();
     }, []);
+
+    const { latitude, longitude } = {
+        latitude: -23.55052,
+        longitude: -46.633308,
+    };
+    
+    const customIcon = L.divIcon({
+        className: 'icon-location',
+        html: `<svg fill="#d33936" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>ionicons-v5-n</title><path d="M256,32C167.67,32,96,96.51,96,176c0,128,160,304,160,304S416,304,416,176C416,96.51,344.33,32,256,32Zm0,224a64,64,0,1,1,64-64A64.07,64.07,0,0,1,256,256Z"></path></g></svg>`,
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+    });
 
     return (
         <>
@@ -257,7 +161,7 @@ export default function Stores() {
                                     <IonIcon className='logo icon' icon={personCircle} />
                                 )}
                                 <h1>{storeData.nome}</h1>
-                        </div>    
+                            </div>
                         </div>
                         <div className='info'>
                             <div className='list'>
@@ -281,6 +185,32 @@ export default function Stores() {
                                 )}
                             </div>
                         </div>
+                        {storeData?.whatsapp || storeData?.instagram || storeData?.facebook ? (
+                            <div className="network-social">
+                                <div className="btns">
+                                    {storeData?.whatsapp && (
+                                        <button onClick={() => window.open(`https://wa.me/55${formatPhoneNumber(storeData?.whatsapp)}`)} className="whatsapp">
+                                            <IonIcon icon={logoWhatsapp} className="icon" />
+                                            Whatsapp
+                                        </button>
+                                    )}
+                                    {storeData?.instagram && (
+                                        <button onClick={() => window.open(storeData?.instagram)} className="instagram">
+                                            <IonIcon icon={logoInstagram} className="icon" />
+                                            Instagram
+                                        </button>
+                                    )}
+                                    {storeData?.facebook && (
+                                        <button onClick={() => window.open(storeData?.facebook)} className="facebook">
+                                            <IonIcon icon={logoFacebook} className="icon" />
+                                            Facebook
+                                        </button>
+                                    )}
+                                </div>
+                            </div>
+                        ) : (
+                            <></>
+                        )}
                     </section>
 
                     {storeData?.carros?.length > 0 && (
@@ -316,31 +246,110 @@ export default function Stores() {
                             </div>
                         </section>
                     )}
-                    
+                            
                     {/* Mapa */}
-                    {storeData?.cep && (
+                    {storeData?.cep  && (
                         <section className='content-store'>
                             <div className='text'>
                                 <h1>Local da concessionária</h1>
                             </div>
                             <div className='map'>
-                                <LoadScript
-                                    googleMapsApiKey={apiKey}
-                                    onLoad={handleScriptLoad}
-                                >
-                                    <GoogleMap
-                                        mapContainerStyle={{ height: "400px", width: "100%" }}
-                                        center={empresaLatLng}
-                                        zoom={15}
-                                        ref={mapRef}
-                                    >
-                                        {empresaLatLng && <Marker position={empresaLatLng} /> }
-                                        {directions && <DirectionsRenderer directions={directions} />}
-                                    </GoogleMap>
-                                </LoadScript>
+                                <iframe src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyCB9S0dGxQ3Wq5aHs_j0w-7DhyaGf4VoQ4&q=${storeData?.estado}, ${storeData?.cep}, ${storeData?.cidade}, ${storeData?.bairro}, ${storeData?.rua}, ${storeData?.numero}`}></iframe>
+                                {/*
+                                    <MapContainer
+                                        center={[latitude, longitude]}
+                                        zoom={13}
+                                        style={{ height: "400px", width: "100%" }}
+                                        >
+                                        <TileLayer
+                                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                            // Satelite => url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+                                        />
+                                        <Marker icon={customIcon} position={storeData?.location}>
+                                            <Popup>
+                                                Localização: {latitude}, {longitude} <br />
+                                                CEP: {storeData?.cep}
+                                            </Popup>
+                                        </Marker>
+                                    </MapContainer>
+                                 */}
                             </div>
                         </section>
                     )}
+
+                    {/* Feedbacks */}
+                    
+                    <Footer />
+                </main>
+            )}
+
+            {carregando && (
+                <main className='container-store'>
+                    
+                    <section className={`content-store`}>
+                        <div className='profile'>
+                            <div className='person'>
+                                <div className='icon'>
+                                    <div className='icon-loading'></div>
+                                </div>
+                                <h1 className='loading'></h1>
+                        </div>    
+                        </div>
+                        <div className='info'>
+                            <div className='list'>
+                                {[
+                                    { label: 'Cidade', value: '' },
+                                    { label: 'Bairro', value: '' },
+                                    { label: 'Rua', value: '' },
+                                    { label: 'Número', value: '' },
+                                    { label: 'CEP', value: '' },
+                                    { label: 'Telefone', value: '' },
+                                    { label: 'CNPJ', value: '' },
+                                    { label: 'Carros Anunciados', value: '' }
+                                ].map ((field, index) =>
+                                    <li key={index}>
+                                        <label className='loading'></label>
+                                        <p className='loading'></p>
+                                    </li>
+                                )}
+                            </div>
+                        </div>
+                    </section>
+
+                    <section className="content-store">
+                        <div className='text'>
+                            <h1>Todos os Carros</h1>
+                        </div>
+                        <div className='cars'>
+                            {[0, 1, 2, 3].map((carro, i) => (
+                                <div className='car' key={i}>
+                                    <div className='image loading'></div>
+                                    <h1 className='loading'></h1>
+                                    <p className='loading'></p>
+                                    <h2> R$ <div className='loading'></div></h2>
+                                    <div className='between'>
+                                        <a>{carro.ano}</a>
+                                        <a>{carro.quilometragem}</a>
+                                    </div>
+                                    <button className='loading'></button>
+                                    <div className='location'>
+                                        <p>
+                                            <IonIcon icon={locationOutline} className='icon' />
+                                            <div className='loading'></div>
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                    
+                    {/* Mapa */}
+                    <section className='content-store'>
+                        <div className='text'>
+                            <h1>Local da concessionária</h1>
+                        </div>
+                        <div className='map loading'></div>
+                    </section>
                     
                     <Footer />
                 </main>

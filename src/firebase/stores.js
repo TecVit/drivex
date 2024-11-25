@@ -8,6 +8,8 @@ const nickCookie = getCookie('nick') || '';
 const emailCookie = getCookie('email') || '';
 
 // Funções
+
+// Complexidade O(1)
 const getStores = async () => {
     let list = [];
     try {
@@ -27,6 +29,7 @@ const getStores = async () => {
     }
 };
 
+// Complexidade O(1)
 const getStore = async (code) => {
     try {
         const storeDoc = await firestore.collection('store')
@@ -44,20 +47,38 @@ const getStore = async (code) => {
     }
 };
 
+// Complexidade O(N + 3)
 const updateStoresAPI = async () => {
     let list = [];
     try {
-        const storesRef = await firestore.collection('store').get();
+        const storesRef = await firestore.collection('store')
+            .where('isUpdated', '==', false)
+            .get();
 
         if (!storesRef.empty) {
-            await Promise.all( storesRef.docs.map(async (doc) => {
+            await Promise.all(storesRef.docs.map(async (doc) => {
                 const data = doc.data();
                 list.push({ ...data, code: doc.id });
+                
+                await doc.ref.update({ isUpdated: true });
             }));
         }
 
+        const apiDoc = await firestore.collection('api').doc('stores').get();
+
+        let existingStores = [];
+        if (apiDoc.exists) {
+            existingStores = apiDoc.data().stores || [];
+        }
+
+        const combinedList = [...existingStores, ...list];
+
+        const uniqueStores = Array.from(new Set(combinedList.map(store => store.code)))
+            .map(code => combinedList.find(store => store.code === code));
+
         await firestore.collection('api')
-        .doc('stores').set({ stores: list }, { merge: true });
+            .doc('stores')
+            .set({ stores: uniqueStores }, { merge: true });
 
         return true;
     } catch (error) {

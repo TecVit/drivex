@@ -2,6 +2,7 @@
 
 .Toastify__toast-container * {
     cursor: pointer !important;
+    z-index: 999 !important;
 }
 
 .Toastify__toast {

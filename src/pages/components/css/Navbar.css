@@ -89,7 +89,7 @@
 .btn-one {
     width: auto;
     height: 44px;
-    padding: 0px 17px;
+    padding: 0px 20px;
     color: var(--one);
     border: 1px solid var(--one);
     font-size: 13.5px;
@@ -98,12 +98,17 @@
     background: transparent;
     cursor: pointer;
     margin: 0px 10px;
+    transition: all .1s ease-in-out;
+} .btn-one:hover,
+  .btn-one:focus {
+    background: var(--one);
+    color: var(--slateEleven);
 }
 
 .btn-two {
     width: auto;
     height: 44px;
-    padding: 0px 16.5px;
+    padding: 0px 20px;
     color: var(--slateEleven);
     border: 1px solid var(--one);
     background: var(--one);
@@ -112,4 +117,14 @@
     border-radius: 4px;
     cursor: pointer;
     margin: 0px 10px;
+}
+
+/* Profile USER */
+.container-navbar .content-navbar .navbar .btns .profile {
+    width: max-content;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
 }

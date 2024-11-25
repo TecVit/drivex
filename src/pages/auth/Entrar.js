@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './css/Entrar.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { NotificationContainer, notifyError, notifyInfo, notifySuccess } from '../../toastifyServer';
+import { notifyError, notifyInfo, notifySuccess } from '../../toastifyServer';
 import Navbar from '../components/Navbar';
 import Icon from '../../image/icon.png';
 
@@ -53,7 +53,7 @@ export default function EntrarStore() {
             } else if (response === 'email-invalido') {
                 notifyError('Email inválido!');
             } else if (response === 'usuario-nao-existe') {
-                notifyError('Empresa não existe!');
+                notifyError('Concessionária não existe!');
             } else if (response === 'cadastro-incompleto') {
                 notifyInfo('Complete seu cadastro');
                 setTimeout(() => {
@@ -91,7 +91,7 @@ export default function EntrarStore() {
             } else if (response === 'email-invalido') {
                 notifyError('Email inválido!');
             } else if (response === 'usuario-nao-existe') {
-                notifyError('Empresa não existe!');
+                notifyError('Concessionária não existe!');
             } else if (response === 'cadastro-incompleto') {
                 notifyInfo('Complete seu cadastro');
                 setTimeout(() => {

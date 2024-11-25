@@ -1,4 +1,4 @@
-.container-store {
+.container-profile {
     width: 100%;
     height: auto;
     display: flex;
@@ -11,7 +11,7 @@
 }
 
 /* Banner */
-.container-store .banner {
+.container-profile .banner {
     width: 100%;
     max-width: 1500px;
     height: auto;
@@ -24,7 +24,7 @@
     overflow: hidden;
 }
 
-.container-store .banner .images {
+.container-profile .banner .images {
     width: 100%;
     height: auto;
     overflow-x: auto;
@@ -43,7 +43,7 @@
 }
 
 /* Arrows */
-.container-store .banner .arrow {
+.container-profile .banner .arrow {
     font-size: 25px;
     padding: 5px;
     border-radius: 50%;
@@ -52,16 +52,16 @@
     cursor: pointer;
     z-index: 100;
     transition: all .1s ease-in-out;
-} .container-store .banner .arrow:hover {
+} .container-profile .banner .arrow:hover {
     background: var(--slateNine);
 }
 
-.container-store .banner .arrow.right {
+.container-profile .banner .arrow.right {
     position: absolute;
     right: 8.5px;
     top: 50%;
     transform: translateY(-50%);
-} .container-store .banner .arrow.left {
+} .container-profile .banner .arrow.left {
     position: absolute;
     left: 8.5px;
     top: 50%;
@@ -69,19 +69,19 @@
 }
 
 
-.container-store .banner .images .image {
+.container-profile .banner .images .image {
     width: max-content;
     flex: 1;
     min-height: 400px;
     transition: all .1s ease-in-out;
-} .container-stores .content-stores .search .stores .store:hover,
-.container-stores .content-stores .search .stores .store:focus {
+} .container-profiles .content-profiles .search .stores .store:hover,
+.container-profiles .content-profiles .search .stores .store:focus {
     background: var(--slateNine);
 }
 
 
 /* Content */
-.container-store .content-store {
+.container-profile .content-profile {
     width: 92.5%;
     max-width: 1200px;
     height: max-content;
@@ -93,21 +93,22 @@
     background: var(--slateEleven);
     border-radius: 16px;
     z-index: 200;
+    position: relative;
     margin: 0px 0px 40px 0px;
-} .container-store .content-store:first-of-type,
- .container-store .content-store:first-child {
+} .container-profile .content-profile:first-of-type,
+ .container-profile .content-profile:first-child {
     padding: 0px 0px 40px 0px;
     margin: 130px 0px 40px 0px;
-} .container-store .content-store.banner-exists {
+} .container-profile .content-profile.banner-exists {
     padding: 0px 0px 40px 0px;
     margin: -50px 0px 40px 0px;
-} .container-store .content-store:last-of-type,
-.container-store .content-store:last-child {
+} .container-profile .content-profile:last-of-type,
+.container-profile .content-profile:last-child {
     margin-bottom: 100px;
 }
 
 /* NETWORK SOCIAL */
-.container-store .content-store .network-social {
+.container-profile .content-profile .network-social {
     width: 100%;
     height: auto;
     margin: 20px 0px 0px 0px;
@@ -118,7 +119,7 @@
     justify-content: center;
 }
 
-.container-store .content-store .network-social .btns {
+.container-profile .content-profile .network-social .btns {
     width: 90%;
     height: auto;
     display: flex;
@@ -127,7 +128,7 @@
     margin: 30px 0px 0px 0px;
 }
 
-.container-store .content-store .network-social .btns button {
+.container-profile .content-profile .network-social .btns button {
     width: max-content;
     height: auto;
     padding: 16.5px 25px;
@@ -141,20 +142,20 @@
     font-weight: 500;
     cursor: pointer;
     transition: all .2s ease-in-out;
-} .container-store .content-store .network-social .btns button .icon {
+} .container-profile .content-profile .network-social .btns button .icon {
     font-size: 20px;
     margin: 0px 6px 0px 0px;
 }
-.container-store .content-store .network-social .btns button.whatsapp {
+.container-profile .content-profile .network-social .btns button.whatsapp {
     background: #25d366;
     color: #ece5dd;
-} .container-store .content-store .network-social .btns button.whatsapp:hover,
-  .container-store .content-store .network-social .btns button.whatsapp:focus {
+} .container-profile .content-profile .network-social .btns button.whatsapp:hover,
+  .container-profile .content-profile .network-social .btns button.whatsapp:focus {
     background: #075e54;
     color: #f1efec;
 }
 
-.container-store .content-store .network-social .btns button.instagram {
+.container-profile .content-profile .network-social .btns button.instagram {
     background: linear-gradient(
         135deg,
         #ffc273,
@@ -163,31 +164,34 @@
         #8a49a1
     );
     color: #fefefe;
-} .container-store .content-store .network-social .btns button.instagram:hover,
-  .container-store .content-store .network-social .btns button.instagram:focus {
+} .container-profile .content-profile .network-social .btns button.instagram:hover,
+  .container-profile .content-profile .network-social .btns button.instagram:focus {
     background: linear-gradient(45deg, #dd2a7b, #dd2a7b, #8a49a1, #8134af);
     color: #fefefe;
 }
 
-.container-store .content-store .network-social .btns button.facebook {
+.container-profile .content-profile .network-social .btns button.facebook {
     background: #3b5998;
     color: #f7f7f7;
-} .container-store .content-store .network-social .btns button.facebook:hover,
- .container-store .content-store .network-social .btns button.facebook:focus {
+} .container-profile .content-profile .network-social .btns button.facebook:hover,
+ .container-profile .content-profile .network-social .btns button.facebook:focus {
     background: #8b9dc3;
     color: #232323;
 }
 
-.container-store .content-store .profile {
+
+/* PROFILE */
+.container-profile .content-profile .profile {
     width: 90%;
     height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     margin: -75px 0px 0px 0px;
 }
 
-.container-store .content-store .profile .person {
+.container-profile .content-profile .profile .person {
     width: max-content;
     max-width: 250px;
     height: auto;
@@ -196,7 +200,7 @@
     align-items: center;
 }
 
-.container-store .content-store .profile .person .logo {
+.container-profile .content-profile .profile .person .logo {
     width: 150px;
     height: 150px;
     background-size: 100%;
@@ -205,8 +209,8 @@
     border-radius: 50%;
     padding: 0px;
     background-color: var(--white);
-    border: 2px solid var(--slateEleven);
-} .container-store .content-store .profile .person .icon.logo {
+    border: 1px solid var(--slateEight);
+} .container-profile .content-profile .profile .person .icon.logo {
     width: 135px;
     height: 135px;
     color: var(--one);
@@ -214,8 +218,12 @@
     margin: 0px;
 } 
 
+.container-profile .content-profile .profile button {
+    margin: auto 0px 0px 0px;
+}
+
 /* Loading */
-.container-store .content-store .profile .person .icon {
+.container-profile .content-profile .profile .person .icon {
     width: 165px;
     height: 165px;
     background: var(--slateEleven);
@@ -227,7 +235,7 @@
     margin: -20px 0px 20px 0px;
 }
 
-.container-store .content-store .profile .person .icon-loading {
+.container-profile .content-profile .profile .person .icon-loading {
     width: 135px;
     height: 135px;
     border-radius: 50%;
@@ -237,7 +245,7 @@
     user-select: none;
 }
 
-.container-store .content-store .profile .person h1 {
+.container-profile .content-profile .profile .person h1 {
     font-size: 22px;
     font-weight: 650;
     text-transform: uppercase;
@@ -245,7 +253,7 @@
     text-align: center;
 }
 
-.container-store .content-store .profile .person h1.loading {
+.container-profile .content-profile .profile .person h1.loading {
     width: 175px;
     height: 15px;
     border-radius: 4px;
@@ -255,15 +263,17 @@
     user-select: none;
 }
 
-.container-store .content-store .text {
+.container-profile .content-profile .text {
     width: 90%;
     height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    padding: 0px;
 }
 
-.container-store .content-store .text h1 {
+.container-profile .content-profile .text h1 {
     font-size: 22px;
     font-weight: 650;
     text-transform: uppercase;
@@ -271,9 +281,12 @@
     text-align: center;
 }
 
+.container-profile .content-profile .text button {
+    margin: 0px;
+}
 
 /* Info */
-.container-store .content-store .info {
+.container-profile .content-profile .info {
     width: 90%;
     height: auto;
     display: flex;
@@ -281,7 +294,7 @@
     margin: 30px 0px 15px 0px;
 }
 
-.container-store .content-store .info .list {
+.container-profile .content-profile .info .list {
     width: 100%;
     height: auto;
     display: flex;
@@ -291,17 +304,17 @@
     gap: 23.5px;
 }
 
-.container-store .content-store .info .list li {
+.container-profile .content-profile .info .list li {
     min-width: 200px;
     display: flex;
     flex-direction: column;
 }
 
-.container-store .content-store .info .list li label {
+.container-profile .content-profile .info .list li label {
     font-size: 16px;
     font-weight: 525;
     margin: 0px 0px 2px 0px;
-} .container-store .content-store .info .list li label.loading {
+} .container-profile .content-profile .info .list li label.loading {
     width: 125px;
     height: 15px;
     border-radius: 4px;
@@ -312,11 +325,11 @@
     user-select: none;
 }
 
-.container-store .content-store .info .list li p {
+.container-profile .content-profile .info .list li p {
     font-size: 16px;
     font-weight: 400;
     margin: 0px 0px 2px 0px;
-} .container-store .content-store .info .list li p.loading {
+} .container-profile .content-profile .info .list li p.loading {
     width: 225px;
     height: 15px;
     border-radius: 4px;
@@ -327,14 +340,13 @@
 }
 
 /* Cars */
-.container-store .content-store .cars {
+.container-profile .content-profile .cars {
     width: 90%;
     height: auto;
     max-width: 1090px;
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    justify-content: center;
     flex-wrap: wrap;
     gap: 22.5px;
     margin: 0px;
@@ -342,16 +354,16 @@
     transition: transform 0.5s ease-in-out;
 }
 
-.container-store .content-store .cars p {
+.container-profile .content-profile .cars p {
     font-size: 16px;
     font-weight: 400;
     margin: 6px 0px 0px 0px;
 }
 
-.container-store .content-store .cars .car {
+.container-profile .content-profile .cars .car {
     flex: 1;
-    min-width: 230px;
-    max-width: 350px;
+    min-width: 250px;
+    max-width: 300px;
     height: max-content;
     background: var(--slateEleven);
     border: 1px solid var(--slateEight);
@@ -366,13 +378,13 @@
     transition: all .1s ease-in-out;
 }
 
-.container-store .content-store .cars .car .image {
+.container-profile .content-profile .cars .car .image {
     width: 100%;
     height: max-content;
     min-height: max-content;
     margin: -10px 0px 0px 0px;
     padding: 0px;
-} .container-store .content-store .cars .car .image.loading {
+} .container-profile .content-profile .cars .car .image.loading {
     min-height: 186px;
     background: radial-gradient(circle at 35% 30%, var(--slateSeven), var(--slateEight), var(--slateEight) 65%);
     background-size: 200% 200%;
@@ -380,13 +392,13 @@
     user-select: none;
 }
 
-.container-store .content-store .cars .car h1 {
+.container-profile .content-profile .cars .car h1 {
     width: 87.5%;
     font-size: 15px;
     font-weight: 550;
     text-transform: uppercase;
     margin: 14px 0px 0px 0px;
-} .container-store .content-store .cars .car h1.loading {
+} .container-profile .content-profile .cars .car h1.loading {
     width: 87.5%;
     min-height: 20px;
     background: radial-gradient(circle at 35% 30%, var(--slateSeven), var(--slateEight), var(--slateEight) 65%);
@@ -396,13 +408,13 @@
     user-select: none;
 }
 
-.container-store .content-store .cars .car p {
+.container-profile .content-profile .cars .car p {
     width: 87.5%;
     font-size: 14px;
     font-weight: 400;
     text-transform: uppercase;
     margin: 6px 0px 0px 0px;
-} .container-store .content-store .cars .car p.loading {
+} .container-profile .content-profile .cars .car p.loading {
     min-height: 15px;
     background: radial-gradient(circle at 35% 30%, var(--slateSeven), var(--slateEight), var(--slateEight) 65%);
     background-size: 200% 200%;
@@ -412,7 +424,7 @@
     user-select: none;
 }
 
-.container-store .content-store .cars .car h2 {
+.container-profile .content-profile .cars .car h2 {
     width: 87.5%;
     height: auto;
     font-size: 18px;
@@ -421,11 +433,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-} .container-store .content-store .cars .car h2 strong {
+} .container-profile .content-profile .cars .car h2 strong {
     width: max-content;
     height: auto;
     font-weight: 600 !important;
-} .container-store .content-store .cars .car h2 div.loading {
+} .container-profile .content-profile .cars .car h2 div.loading {
     min-width: 125px;
     height: 17.5px;
     background: radial-gradient(circle at 35% 30%, var(--slateSeven), var(--slateEight), var(--slateEight) 65%);
@@ -436,7 +448,7 @@
     margin: 1px 0px 0px 8px;
 }
 
-.container-store .content-store .cars .car .between {
+.container-profile .content-profile .cars .car .between {
     width: 87.5%;
     display: flex;
     flex-direction: row;
@@ -445,13 +457,13 @@
     margin: 2px 0px 0px 0px;
 }
 
-.container-store .content-store .cars .car .between a {
+.container-profile .content-profile .cars .car .between a {
     width: max-content;
     font-size: 15px;
     font-weight: 400;
 }
 
-.container-store .content-store .cars .car button {
+.container-profile .content-profile .cars .car button {
     width: 87.5%;
     height: 43.5px;
     border-radius: 8px;
@@ -461,14 +473,14 @@
     margin: 12.5px 0px;
     cursor: pointer;
     transition: all .1s ease-in-out;
-} .container-store .content-store .cars .car button:hover,
-.container-store .content-store .cars .car button:focus {
+} .container-profile .content-profile .cars .car button:hover,
+.container-profile .content-profile .cars .car button:focus {
     background: var(--slateEleven);
     border: 1px solid var(--one);
     color: var(--one);
 }
 
-.container-store .content-store .cars .car button.loading {
+.container-profile .content-profile .cars .car button.loading {
     height: 50px;
     background: radial-gradient(circle at 35% 30%, var(--slateSeven), var(--slateEight), var(--slateEight) 65%);
     background-size: 200% 200%;
@@ -479,7 +491,7 @@
     cursor: default;
 }
 
-.container-store .content-store .cars .car .location {
+.container-profile .content-profile .cars .car .location {
     width: 100%;
     height: auto;
     display: flex;
@@ -489,7 +501,7 @@
     margin: 5px 0px 0px 0px;
 }
 
-.container-store .content-store .cars .car .location p {
+.container-profile .content-profile .cars .car .location p {
     width: 87.5%;
     height: auto;
     display: flex;
@@ -499,19 +511,19 @@
     font-size: 15px;
     font-weight: 400;
     margin: 15px 0px;
-} .container-store .content-store .cars .car .location p .icon {
+} .container-profile .content-profile .cars .car .location p .icon {
     font-size: 17px;
     margin: 0px 4px 0px 0px;
-} .container-store .content-store .cars .car .location p .like {
+} .container-profile .content-profile .cars .car .location p .like {
     font-size: 17px;
     margin: 0px 0px 0px auto;
     cursor: pointer;
     transition: all .1s ease-in-out;
-} .container-store .content-store .cars .car .location p .like:hover {
+} .container-profile .content-profile .cars .car .location p .like:hover {
     color: var(--one);
 }
 
-.container-store .content-store .cars .car .location p div.loading {
+.container-profile .content-profile .cars .car .location p div.loading {
     width: 150px;
     height: 17.5px;
     background: radial-gradient(circle at 35% 30%, var(--slateSeven), var(--slateEight), var(--slateEight) 65%);
@@ -525,7 +537,7 @@
 
 
 /* Map */
-.container-store .content-store .map {
+.container-profile .content-profile .map {
     width: 90%;
     height: auto;
     display: flex;
@@ -533,7 +545,7 @@
     margin: 30px 0px 15px 0px;
     border-radius: 12px;
     overflow: hidden;
-} .container-store .content-store .map.loading {
+} .container-profile .content-profile .map.loading {
     min-height: 275px;
     background: radial-gradient(circle at 35% 30%, var(--slateSeven), var(--slateEight), var(--slateEight) 65%);
     background-size: 200% 200%;
@@ -541,12 +553,12 @@
     user-select: none;
 }
 
-.container-store .content-store .map iframe {
+.container-profile .content-profile .map iframe {
     width: 100%;
     height: auto;
     min-height: 350px;
 }
 
-.container-store .content-store .map .icon-location svg {
+.container-profile .content-profile .map .icon-location svg {
     color: var(--one);
 }

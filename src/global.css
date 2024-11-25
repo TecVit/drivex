@@ -82,6 +82,10 @@ h1, h2, h3, h4, h5, h6, a, p, strong, span, label, input, textarea {
 
 input::placeholder {
   color: var(--slateSeven);
+} input:disabled {
+  background: var(--slateNine) !important;
+  border: 1px solid var(--slateEight) !important;
+  cursor: not-allowed;
 }
 
 select::placeholder {
@@ -90,8 +94,7 @@ select::placeholder {
 }
 
 textarea::placeholder {
-  color: var(--slateTwo);
-  opacity: 0.9;
+  color: var(--slateSeven);
 }
 
 /* ALERTA MODIFICADO */
