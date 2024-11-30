@@ -5,7 +5,7 @@ import 'firebase/compat/database';
 import 'firebase/compat/storage';
 import { firebaseConfig } from './firebaseConfig';
 import { clearCookies, getCookie, setCookie } from './cookies';
-import { notifyInfo } from '../toastifyServer';
+import { notifyError, notifyInfo } from '../toastifyServer';
 
 const uidCookie = getCookie('uid') || null;
 const nomeCookie = getCookie('nome') || null;
@@ -28,7 +28,7 @@ const formatarNomeDeUsuario = (valor) => {
 const verifyAccountExists = async (uid) => {
     try {
         const userDocRef = firestore.collection('users').doc(uid);
-        const storeDocRef = firestore.collection('stores').doc(uid);
+        const storeDocRef = firestore.collection('private').doc(uid);
 
         const userDocSnapshot = await userDocRef.get();
         const storeDocSnapshot = await storeDocRef.get();
@@ -53,7 +53,7 @@ export const entrarComRedeSocial = async (provedor, type) => {
             if (type === 'user') {
                 usuarioRef = firestore.collection('users').doc(user.uid);
             } else if (type === 'store') {
-                usuarioRef = firestore.collection('stores').doc(user.uid);
+                usuarioRef = firestore.collection('private').doc(user.uid);
             } else {
                 throw new Error("Tipo inválido! Use 'user' ou 'store'.");
             }
@@ -113,7 +113,7 @@ export const cadastrarComRedeSocial = async (provedor, type) => {
             if (type === 'user') {
                 usuarioRef = firestore.collection('users').doc(user.uid);
             } else if (type === 'store') {
-                usuarioRef = firestore.collection('stores').doc(user.uid);
+                usuarioRef = firestore.collection('private').doc(user.uid);
             } else {
                 throw new Error("Tipo inválido! Use 'user' ou 'store'.");
             }
@@ -174,7 +174,7 @@ export const cadastrarComEmail = async (email, senha, type) => {
         if (type === 'user') {
             userDocRef = firestore.collection('users').doc(user.uid);
         } else if (type === 'store') {
-            userDocRef = firestore.collection('stores').doc(user.uid);
+            userDocRef = firestore.collection('private').doc(user.uid);
         } else {
             throw new Error("Tipo inválido! Use 'user' ou 'store'.");
         }
@@ -232,7 +232,7 @@ export const entrarComEmail = async (email, senha, type) => {
         if (type === 'user') {
             userDocRef = firestore.collection('users').doc(user.uid);
         } else if (type === 'store') {
-            userDocRef = firestore.collection('stores').doc(user.uid);
+            userDocRef = firestore.collection('private').doc(user.uid);
         } else {
             throw new Error("Tipo inválido! Use 'user' ou 'store'.");
         }
@@ -324,6 +324,49 @@ export const cadastrarComFacebook = () => {
   
 export const sair = () => {
   return auth.signOut();
+};
+
+export const verificarUsuario = async (uidCookie, emailCookie, nomeCookie) => {
+    return new Promise((resolve) => {
+        const unsubscribe = auth.onAuthStateChanged(async function (user) {
+            if (user) {
+                try {
+                    if ((user.email && emailCookie !== user.email) || (user.uid && uidCookie !== user.uid)) {
+                        notifyError('Não conseguimos identificar seu usuário, faça login novamente!');
+                        await clearCookies();
+                        localStorage.clear();
+                        resolve(false);
+                        return;
+                    }
+
+                    // Busca o documento do usuário no Firestore
+                    const userDoc = await firestore.collection('private').doc(user.uid).get();
+                    if (userDoc.exists) {
+                        const data = userDoc.data();
+
+                        if (data.nome === nomeCookie && data.email === emailCookie) {
+                            resolve(true);
+                        } else {
+                            notifyError('Não conseguimos identificar seu usuário, faça login novamente!');
+                            await clearCookies();
+                            localStorage.clear();
+                            resolve(false);
+                        }
+                    } else {
+                        notifyError('Documento de usuário não encontrado!');
+                        resolve(false);
+                    }
+                } catch (error) {
+                    console.error('Erro durante a verificação do usuário:', error);
+                    resolve(false);
+                }
+            } else {
+                resolve(false);
+            }
+
+            unsubscribe();
+        });
+    });
 };
 
 export { firebase, firestore, auth };

@@ -16,8 +16,8 @@ import { updateStoresAPI } from '../../firebase/stores';
 
 export default function CadastrarStore() {
 
-    function gerarCode(nome) {
-        return nome
+    async function gerarCode(nome) {
+        return await nome
           .normalize("NFD") // Normaliza a string para decompor os acentos
           .replace(/[\u0300-\u036f]/g, "") // Remove os acentos
           .replace(/[^a-zA-Z0-9\s]/g, '-') // Substitui caracteres especiais por '-'
@@ -37,7 +37,7 @@ export default function CadastrarStore() {
         const unsubscribe = auth.onAuthStateChanged( async function(user) {
             if (user) {
                 if (user.email && emailCookie === user.email || user.uid && uidCookie === user.uid) {
-                    const docUser = await firestore.collection('stores')
+                    const docUser = await firestore.collection('private')
                     .doc(user.uid).get();
                     
                     if (docUser.exists) {
@@ -371,17 +371,18 @@ export default function CadastrarStore() {
                 }
             });
 
-            const storeDoc = await firestore.collection('store').doc(gerarCode(inputNome)).get();
+            let code = await gerarCode(inputNome);
+            const storeDoc = await firestore.collection('public').doc(code).get();
 
             if (storeDoc.exists) {
                 notifyError('Já existe uma concessionária com esse nome');
                 return;
             }
 
-            await firestore.collection('store').doc(gerarCode(inputNome)).set(dadosAtualizados, { merge: true });
+            await firestore.collection('public').doc(code).set(dadosAtualizados, { merge: true });
             delete dadosAtualizados['isUpdated'];
             
-            await firestore.collection('stores').doc(userId).update(dadosAtualizados);
+            await firestore.collection('private').doc(userId).update(dadosAtualizados);
             
             const success = await updateStoresAPI();
 

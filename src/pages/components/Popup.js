@@ -3,7 +3,7 @@ import './css/Popup.css';
 import { IoMdClose } from 'react-icons/io';
 import { debounce } from 'lodash';
 
-export default function Popup({ children, title, handleClose, handleSave, handleAdd, handleSend, handleDelete }) {
+export default function Popup({ children, title, handleClose, handleSave, handleAdd, handleSend, handleDelete, loading }) {
     function getTopPositionRelativeToPage(element) {
         const rect = element.getBoundingClientRect();
         return rect.top + window.scrollY; // Simplificado para navegadores modernos
@@ -48,7 +48,14 @@ export default function Popup({ children, title, handleClose, handleSave, handle
                         )}
                         {handleSave && (
                             <button className="save" onClick={handleSave}>
-                                Salvar Alterações
+                                {loading ? (
+                                    <div className='flex'>
+                                        <div style={{ marginRight: '8px' }} className='loader'></div>
+                                        Carregando..
+                                    </div>
+                                ) : (
+                                    <> Salvar Alterações </>
+                                )}
                             </button>
                         )}
                         {handleAdd && (

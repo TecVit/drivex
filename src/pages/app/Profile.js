@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './css/Profile.css';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { NotificationContainer, notifyError, notifyInfo } from '../../toastifyServer';
+import { NotificationContainer, notifyError, notifyInfo, notifySuccess } from '../../toastifyServer';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
 // Firebase
-import { getStore } from '../../firebase/stores';
+import { getStore, updateStoresAPI } from '../../firebase/stores';
 
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import L from "leaflet";
@@ -32,7 +32,7 @@ import {
   logoFacebook
 } from 'ionicons/icons';
 import { clearCookies, getCookie } from '../../firebase/cookies';
-import { auth, firestore } from '../../firebase/login';
+import { auth, firestore, verificarUsuario } from '../../firebase/login';
 
 export default function Profile() {
 
@@ -73,7 +73,7 @@ export default function Profile() {
                     localStorage.clear();
                     navigate('/entrar');
                 } else {
-                    const userDoc = await firestore.collection('stores')
+                    const userDoc = await firestore.collection('private')
                     .doc(user.uid).get();
                     
                     if (userDoc.exists) {
@@ -122,58 +122,6 @@ export default function Profile() {
         }));
     };
 
-    const storeDataFake = { 
-        code: 'limar-automoveis', 
-        stars: 4.23,
-        nome: 'Limar Automóveis', 
-        cidade: 'Araraquara - SP',
-        bairro: 'Vila Sedenho',
-        numero: '155',
-        rua: 'Av. Pedro Galeazi',
-        cep: '14806015',
-        telefone: '(16) 99726-7084',
-        cnpj: '08.337.462/0001-00',
-        foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfaW9e8C6_eh5MtgDxYHLypzaq84EOfJanfw&s',
-        carros: [
-            {
-                uid: uuidv4(),
-                code: 'fiat-mobi-1.0-evo-flex-like-manual',
-                nome: 'Fiat Mobi',
-                modelo: '1.0 Evo Flex Like Manual',
-                foto: 'https://image.webmotors.com.br/_fotos/anunciousados/gigante/2024/202410/20241010/fiat-mobi-1.0-evo-flex-like.-manual-wmimagem05061238423.jpg?s=fill&w=552&h=400&q=85',
-                preco: 85000,
-                descricao: 'Se você está buscando um novo carro, não se arrisque e compre na Localiza Seminovos: carros com 360 itens verificados, garantia e procedência. Aqui você encontra a maior variedade de modelos do mercado, condições únicas de financiamento, entrada facilitada em até 10 vezes sem juros, carros revisados e com garantia de quilometragem real. Viabilizamos a troca do seu carro usado e entregamos seu novo carro na segurança de sua casa! Agende já seu atendimento.',
-                ano: 2020,
-                quilometragem: '35.000 km',
-                cidade: 'Ribeirão Preto, SP'
-            },
-            {
-                uid: uuidv4(),
-                code: 'honda-civic-2.0-16v-flexone-sport-cvt',
-                nome: 'Honda Civic',
-                modelo: '2.0 16V FlexOne Sport CVT',
-                foto: 'https://image.webmotors.com.br/_fotos/anuncionovos/gigante/2024/202408/20240823/honda-civic-2.0-di-e:hev-advanced-ecvt-wmimagem11065108388.jpg?s=fill&w=552&h=400&q=85',
-                preco: 125000,
-                descricao: 'Honda Civic com design moderno, desempenho excepcional e conforto. Revisões em dia e garantia de procedência. Ótimas condições de financiamento e trocas.',
-                ano: 2022,
-                quilometragem: '15.000 km',
-                cidade: 'Araraquara, SP'
-            },
-            {
-                uid: uuidv4(),
-                code: 'toyota-corolla-2.0-vvt-ie-flex-xei-direct-shift',
-                nome: 'Toyota Corolla',
-                modelo: '2.0 VVT-iE Flex XEi Direct Shift',
-                foto: 'https://image.webmotors.com.br/_fotos/anunciousados/gigante/2024/202411/20241118/toyota-corolla-2-0-vvtie-flex-xei-direct-shift-wmimagem13051269711.webp?s=fill&w=249&h=186&q=70',
-                preco: 135000,
-                descricao: 'Toyota Corolla com tecnologia de ponta, segurança e economia. Uma escolha confiável para quem busca qualidade e durabilidade.',
-                ano: 2021,
-                quilometragem: '20.000 km',
-                cidade: 'São Carlos, SP'
-            }
-        ]
-    };
-
     // Data
     const [storeData, setStoreData] = useState({});
 
@@ -197,9 +145,6 @@ export default function Profile() {
           carouselRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         }
     };
-
-
-    // const apiKey = 'AIzaSyCmiMWmmQjEhkVu7dKONgRpQ2CUsULomgk';
 
     useEffect(() => {
         const getStoreData = async () => {
@@ -241,6 +186,64 @@ export default function Profile() {
     });
     */
 
+    const formatarCEP = async (input) => {
+        const apenasNumeros = String(input || '').replace(/\D/g, "").slice(0, 8);
+        
+        let formatado = apenasNumeros;
+        if (apenasNumeros.length >= 5) {
+            formatado = `${apenasNumeros.substring(0, 5)}-${apenasNumeros.substring(5, 8)}`;
+        }
+        
+        handleEditStoreData('cep', formatado);
+        if (apenasNumeros.length === 8) {
+            try {
+                const response = await axios.get(`https://viacep.com.br/ws/${apenasNumeros}/json/`);
+                if (response.data.erro) {
+                    cleanEditCEP();
+                    return;
+                }
+                const { uf: estado, localidade: cidade, bairro, logradouro: rua } = response.data;
+                handleEditStoreData('estado', estado);
+                handleEditStoreData('cidade', cidade);
+                handleEditStoreData('bairro', bairro);
+                handleEditStoreData('rua', rua);
+            } catch (error) {
+                console.error("Erro ao buscar o CEP:", error);
+            }
+        }
+    };
+    const cleanEditCEP = () => {
+        handleEditStoreData('estado', '');
+        handleEditStoreData('cidade', '');
+        handleEditStoreData('bairro', '');
+        handleEditStoreData('rua', '');
+    }
+    
+    const handleChangeCEP = async (event) => {
+        formatarCEP(event.target.value);
+    };
+
+    const formatarTelefone = (telefone) => {
+        const apenasNumeros = telefone.replace(/\D/g, '').slice(0, 11);
+        if (apenasNumeros.length === 0) {
+            return '';
+        } else if (apenasNumeros.length <= 2) {
+            return `(${apenasNumeros}`;
+        } else if (apenasNumeros.length <= 6) {
+            return `(${apenasNumeros.substring(0, 2)}) ${apenasNumeros.substring(2)}`;
+        } else if (apenasNumeros.length > 7) {
+            return `(${apenasNumeros.substring(0, 2)}) ${apenasNumeros.substring(2, 7)}-${apenasNumeros.substring(7)}`;
+        }
+    };
+
+    const handleChangeTelefone = (event) => {
+        const inputFormatado = formatarTelefone(event.target.value);
+        handleEditStoreData('telefone', inputFormatado);
+    };
+    const handleChangeWhatsapp = (event) => {
+        const inputFormatado = formatarTelefone(event.target.value);
+        handleEditStoreData('whatsapp', inputFormatado);
+    };
     
     const handleUploadImage = async () => {
         if (!inputFile) return alert("Por favor, selecione uma imagem.");
@@ -251,7 +254,8 @@ export default function Profile() {
         formData.append('image', inputFile.fileObject);
 
         try {
-            const response = await axios.post(`https://api.imgbb.com/1/upload?key=541a03aa10ef76e54f0a9727d58526a2`, formData, {
+            let key = '541a03aa10ef76e54f0a9727d58526a2';
+            const response = await axios.post(`https://api.imgbb.com/1/upload?key=${key}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 }
@@ -259,8 +263,8 @@ export default function Profile() {
 
             // Resposta contendo a URL da imagem
             if (response.data.success) {
-                alert(response.data.data.url);
-                alert("Imagem carregada com sucesso!");
+                let url = response.data.data.url;
+                return url;
             } else {
                 alert("Falha ao carregar a imagem.");
             }
@@ -280,10 +284,37 @@ export default function Profile() {
         setCarregando(true);
         try {
             
+            let dataNewSave = {
+                ...storeDataEdit,
+                isUpdated: false,
+            }
+            
+            if (inputFile) {
+                let url = await handleUploadImage();
+                dataNewSave.foto = url;
+            }
+            
+            const verifyUser = await verificarUsuario(uidCookie, emailCookie, nomeCookie);
+            if (!verifyUser) {
+                return;
+            }
 
+            let code = await gerarCode(nomeCookie);
+            await firestore.collection('public').doc(code).update(dataNewSave, { merge: true });
+            delete dataNewSave['isUpdated'];
+
+            await firestore.collection('private').doc(uidCookie).update(dataNewSave);
+            await updateStoresAPI();
+            
+            notifySuccess('Dados salvos com sucesso');
+            setStoreData(dataNewSave);
+            setMdPopupEditar(false);
+            
+            return true;
 
         } catch (error) {
-            
+            console.error(error);
+            return;
         } finally {
             setCarregando(false);
         }
@@ -502,7 +533,7 @@ export default function Profile() {
             
               {/* Popups */}
               {mdPopupEditar && (
-                <Popup handleClose={() => setMdPopupEditar(false)} handleSave={handleSave} title="Editar dados do perfil">
+                <Popup handleClose={() => setMdPopupEditar(false)} handleSave={handleSave} title="Editar dados do perfil" loading={carregando}>
                     <div className='form'>
                         <div className='file'>
                             <div className='input-file'>
@@ -545,53 +576,57 @@ export default function Profile() {
 
                         <div className='input'>
                             <label>Telefone</label>
-                            <input maxLength={60} value={storeDataEdit.telefone} placeholder='(00) 00000-0000' type='text' />
+                            <input maxLength={60} onChange={handleChangeTelefone} value={storeDataEdit.telefone} placeholder='(00) 00000-0000' type='text' />
                         </div>
 
                         <div className='input'>
                             <label>Número do Whatsapp</label>
-                            <input maxLength={60} value={storeDataEdit.whatsapp} placeholder='(00) 00000-0000' type='text' />
+                            <input maxLength={60} onChange={handleChangeWhatsapp} value={storeDataEdit.whatsapp} placeholder='(00) 00000-0000' type='text' />
                         </div>
 
                         <div className='input'>
                             <label>Link do Instagram</label>
-                            <input maxLength={60} value={storeDataEdit.instagram} placeholder='https://instagram.com/drivex.com.br' type='text' />
+                            <input maxLength={60} onChange={(e) => handleEditStoreData('instagram', e.target.value)} value={storeDataEdit.instagram} placeholder='https://instagram.com/drivex.com.br' type='text' />
                         </div>
 
                         <div className='input'>
                             <label>Link do Facebook</label>
-                            <input maxLength={60} value={storeDataEdit.facebook} placeholder='https://facebook.com/drivex.com.br' type='text' />
+                            <input maxLength={60} onChange={(e) => handleEditStoreData('facebook', e.target.value)} value={storeDataEdit.facebook} placeholder='https://facebook.com/drivex.com.br' type='text' />
                         </div>
 
                         <div className='input'>
                             <label>CEP</label>
-                            <input maxLength={60} value={storeDataEdit.cep} placeholder='00000-000' type='text' />
+                            <input maxLength={60} onChange={handleChangeCEP} value={storeDataEdit.cep} placeholder='00000-000' type='text' />
                         </div>
 
-                        <div className='input'>
-                            <label>Estado</label>
-                            <input disabled maxLength={60} value={storeDataEdit.estado} type='text' />
-                        </div>
+                        {storeDataEdit.estado && storeDataEdit.cidade && storeDataEdit.bairro && storeDataEdit.rua && (
+                            <>
+                                <div className='input'>
+                                    <label>Estado</label>
+                                    <input disabled maxLength={60} value={storeDataEdit.estado} type='text' />
+                                </div>
 
-                        <div className='input'>
-                            <label>Cidade</label>
-                            <input disabled maxLength={60} value={storeDataEdit.cidade} type='text' />
-                        </div>
+                                <div className='input'>
+                                    <label>Cidade</label>
+                                    <input disabled maxLength={60} value={storeDataEdit.cidade} type='text' />
+                                </div>
 
-                        <div className='input'>
-                            <label>Bairro</label>
-                            <input disabled maxLength={60} value={storeDataEdit.bairro} type='text' />
-                        </div>
+                                <div className='input'>
+                                    <label>Bairro</label>
+                                    <input disabled maxLength={60} value={storeDataEdit.bairro} type='text' />
+                                </div>
 
-                        <div className='input'>
-                            <label>Rua</label>
-                            <input disabled maxLength={60} value={storeDataEdit.rua} type='text' />
-                        </div>
+                                <div className='input'>
+                                    <label>Rua</label>
+                                    <input disabled maxLength={60} value={storeDataEdit.rua} type='text' />
+                                </div>
 
-                        <div className='input'>
-                            <label>Numero</label>
-                            <input maxLength={60} placeholder='Numero da residência (Opcional)' value={storeDataEdit.numero} type='text' />
-                        </div>
+                                <div className='input'>
+                                    <label>Numero</label>
+                                    <input maxLength={60} onChange={(e) => handleEditStoreData('numeroResidencia', e.target.value)} value={storeDataEdit.numeroResidencia} placeholder='Numero da residência (Opcional)' type='text' />
+                                </div>
+                            </>
+                        )}
 
                     </div>
                 </Popup>

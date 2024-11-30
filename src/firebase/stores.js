@@ -32,7 +32,7 @@ const getStores = async () => {
 // Complexidade O(1)
 const getStore = async (code) => {
     try {
-        const storeDoc = await firestore.collection('store')
+        const storeDoc = await firestore.collection('public')
             .doc(code).get();
 
         if (storeDoc.exists) {
@@ -49,9 +49,11 @@ const getStore = async (code) => {
 
 // Complexidade O(N + 3)
 const updateStoresAPI = async () => {
+    const date = new Date();
+    const today = `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}/${date.getFullYear()} - 00:00`;
     let list = [];
     try {
-        const storesRef = await firestore.collection('store')
+        const storesRef = await firestore.collection('public')
             .where('isUpdated', '==', false)
             .get();
 
@@ -78,7 +80,7 @@ const updateStoresAPI = async () => {
 
         await firestore.collection('api')
             .doc('stores')
-            .set({ stores: uniqueStores }, { merge: true });
+            .set({ stores: uniqueStores, updateDate: today }, { merge: true });
 
         return true;
     } catch (error) {

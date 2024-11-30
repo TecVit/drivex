@@ -97,6 +97,11 @@ textarea::placeholder {
   color: var(--slateSeven);
 }
 
+*.flex {
+  display: flex !important;
+  align-items: center !important;
+}
+
 /* ALERTA MODIFICADO */
 .swal-modal {
   background-color: var(--slateThree);
